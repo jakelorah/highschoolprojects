@@ -1,0 +1,23 @@
+<!-- Jake Lorah - 1/19/17  -->
+
+      {font-family: Arial, Helvetica, sans-serif}
+#page      {position: absolute; top: 10px; left: 250px; width: 800px}
+#logo      {position: center; width: 100%; top: 5px; left: 5px}
+
+#pageContent {position: center; top: 120px; center: 155px }
+
+#clock     {width: 480px; height: 85px; border: 2px solid black; float: center; margin-left: 10px;
+            background-color: "#fffde7"; padding: 5px}
+#clock label {font-size: 14px}
+
+input, label {display: block; float: left}
+#now, #countdown {width: 150px}
+input            {margin-left: 5px; margin-right: 5px; text-align: left}
+
+h1, h2       {letter-spacing: 2px; color: black; background-color: ; font-weight: normal;
+              padding: 3px}
+h3           {letter-spacing: 5px; font-weight: normal font-style: italic;}
+address      {font-style: normal; font-size: 10px; text-align: center; padding-bottom: 10px;
+              }
+
+

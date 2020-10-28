@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+ Jake Lorah
+<br>
+<br>
+<center><b><font size="5" color="black">Knowledge Check 15 questions</font></center></b>
+<br>
+<body bgcolor="#e0f7fa">
+<script>
+var daysofweek = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var day = weekday[daysofweek.getDay()];
+if (day == weekday[1]) {
+ alert("Today is Monday");
+} else if (day == weekday[2]) {
+ alert("Today is Tuesday");
+} else if (day == weekday[3]) {
+ alert("Today is Wednesday");
+} else if (day == weekday[4]) {
+ alert("Today is Thursday");
+} else if (day == weekday[5]) {
+ alert("Today is Friday");
+} else if (day == weekday[6]) {
+ alert("Today is Saturday");
+} else if (day == weekday[1]) {
+ alert("Today is Sunday");
+}
+</script>
+ <script type="text/javascript">
+   function returnMonth() {
+   var month =  new Array   
+(
+"Access opens with this view displayed.<br>Datasheet View", 
+
+"This term describes a single unit of information about a person, place, item, or event.<br>Field", 
+
+"This term describes all of the data about one subject in a table.<br>Record",  
+
+"This object is created first before any other objects in a database.<br>Table", 
+
+"This database object is used to display or print data from one or more tables in a specific layout or format.<br>Query", 
+
+"Click this button at the column width dialog box to set the column width to the length of the longest entry in the column.<br>Best Fit", 
+
+"Press this key to turn on Edit mode in a datasheet.<br>F2",
+
+"This object provides a user-friendly interface with which you can edit, view, or print data by working with only one record at a time.<br>Form", 
+
+"Access displays a message box requesting confirmation when a record is about to be deleted because this feature is not available for a delete operation.<br>Undo",
+
+"When more than one column is selected for a sort operation, Access sorts first by this column.<br>Leftmost Column",
+
+"This feature temporarily hides records in the datasheet that do not meet the specified criteria.<br>Filter",
+
+"This page layout orientation rotates the printout to print wider than it is tall.<br>Landscape",
+
+"Display this dialog box to set your own custom margins.<br>Page Setup",
+
+"These are the steps to hide a column in a datasheet.<br>Right-click field name in header row and then click Hide Fields",
+
+"This keyboard command selects all records in the datasheet.<br>Ctrl+A or Ctrl + Shift + Spacebar",
+
+
+
+
+
+
+"1. Access opens with this view displayed.<br>Datasheet View<br>2. This term describes a single unit of information about a person, place, item, or event.<br>Field<br> 3. This term describes all of the data about one subject in a table.<br>Record<br>  4. This object is created first before any other objects in a database.<br>Table<br> 5. This database object is used to display or print data from one or more tables in a specific layout or format.<br>Query<br> 6. Click this button at the column width dialog box to set the column width to the length of the longest entry in the column.<br>Best Fit<br> 7. Press this key to turn on Edit mode in a datasheet.<br>F2<br> 8. This object provides a user-friendly interface with which you can edit, view, or print data by working with only one record at a time.<br>Form<br> 9. Access displays a message box requesting confirmation when a record is about to be deleted because this feature is not available for a delete operation.<br>Undo<br> 10. When more than one column is selected for a sort operation, Access sorts first by this column.<br>Leftmost Column<br> 11. This feature temporarily hides records in the datasheet that do not meet the specified criteria.<br>Filter<br> 12. This page layout orientation rotates the printout to print wider than it is tall.<br>Landscape<br> 13. Display this dialog box to set your own custom margins.<br>Page Setup<br> 14. These are the steps to hide a column in a datasheet.<br>Right-click field name in header row and then click Hide Fields<br> 15. This keyboard command selects all records in the datasheet.<br>Ctrl+A or Ctrl + Shift + Spacebar");
+
+do{      
+var userInput = prompt("Please give a number 1-15 for a question and answer. Print 16 for all questions and answers. Print 0 to exit");
+}
+while (userInput < 0 || userInput > 16)
+       userInput = userInput-1
+      document.write("" + month[userInput]);
+    }
+
+
+switch(userInput){
+               case -1: window.close();
+               break;
+               }
+	document.write(userInput[x]);
+
+   </script>
+</head>
+<body onLoad="returnMonth()">
+</body>
+</htm

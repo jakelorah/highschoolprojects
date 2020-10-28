@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 3
+   Case Problem 1
+
+   The Lighthouse
+   Author: Jake Lorah 
+   Date: 2/24/17   
+
+   Filename:         clist.htm
+   Supporting files: lhouse.css, list.js, logo.jpg
+
+-->
+<!--These are the files associated with the main page-->
+     <title>The Lighthouse</title>
+   <link href="lhouse.css" rel="stylesheet" type="text/css" />
+   <script type="text/javascript" src="list.js"></script>
+   <script type="text/javascript">
+      function amountTotal() {
+         total=0;
+         for (var i=0; i<amount.length; i++) {
+            total+=amount[i];
+         }
+         return total;
+      }
+   </script>
+</head>
+<!--This is the info and logo at the top of the page-->
+<body>
+
+   <div id="title">
+      <img src="logo.jpg" alt="The Lighthouse" />
+      The Lighthouse<br />
+      543 Oak Street<br />
+      Owensboro, KY &nbsp;&nbsp;42302<br/>
+      (270) 555-7511
+   </div>
+<!--This is the base of the table. Here the column names are made-->
+   <div id="data_list">
+      <script type="text/javascript">
+         document.write("<table border='1' rules='rows' cellspacing='0'>");
+         document.write("<tr><th>Date</th><th>Amount</th><th>First Name</th>");
+         document.write("<th>Last Name</th><th>Address</th></tr>");
+<!--This makes the background color for every other box yellow-->      
+         for (i=0; i< amount.length; i++) {
+            if (i%2==0) document.write("<tr>");
+            else document.write("<tr class='yellowrow'>");
+
+            document.write("<td>"+date[i]+"</td>");
+            document.write("<td class='amt'>"+amount[i]+"</td>");
+            document.write("<td>"+firstName[i]+"</td>");
+            document.write("<td>"+lastName[i]+"</td>");
+            document.write("<td>");
+            document.write(street[i]+"<br />");
+            document.write(city[i]+", "+state[i]+" "+zip[i]);
+            document.write("</td>");
+            document.write("</tr>");
+         }
+
+         document.write("</table>");
+      </script>
+   </div>
+<!--This is the little summary box next to the table, and the column names for it-->
+   <div id="totals">
+      <script type="text/javascript">
+         document.write("<table border='1' cellspacing='1'>");
+         document.write("<tr><th id='sumTitle' colspan='2'>Summary</th></tr>");
+         document.write("<tr><th>Contributors</th>");
+         document.write("<td>"+amount.length+"</td></tr>");
+         document.write("<tr><th>Amount</th>");
+         document.write("<td>$"+amountTotal()+"</td></tr>");
+         document.write("</table>");
+      </script>
+   </div>
+
+</body>
+</html>

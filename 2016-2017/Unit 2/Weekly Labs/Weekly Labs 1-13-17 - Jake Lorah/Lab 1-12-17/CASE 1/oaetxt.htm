@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 2
+   Case Problem 1
+
+   Online Aptitude Quiz: Page 1
+   Author: Jake Lorah
+   Date:   1/12/17
+
+   Filename:         oae.htm
+   Supporting files: figa.jpg, figb.jpg, figc.jpg, figd.jpg, figures.jpg, 
+                     functions.js, oae.jpg, quiz.css
+-->
+<title>Online Aptitude Quiz: Page</title>
+<link href="quiz.css" rel="stylesheet" type="text/css" />
+<!-- Calling the file functions.js -->
+<script type="text/javascript" src="functions.js"></script>
+<script type="text/javascript">
+var seconds=0;
+var clockId;
+<!-- Create a function called runClock. This counts how many seconds you take during the quiz -->
+function runClock() {
+   seconds++;
+   document.quiz.quizclock.value=seconds;
+}
+<!-- Create a function called startClock. This starts the clock on the left of the quiz when you click start quiz -->
+function startClock() {
+   showQuiz();
+   clockId=setInterval("runClock()",1000);
+}
+<!-- Create a function called stopClock. This stops the clock when you clicked finish. Also an alert will pop up saying your score and how long you took  -->
+function stopClock() {
+   clearInterval(clockId);
+   correctAns=gradeQuiz();
+   alert("You have "+correctAns+" correct out of 5 in "+document.quiz.quizclock.value+" seconds.");
+}
+</script>
+</head>
+<body>
+<form id="quiz" name="quiz" action="">
+<div id="header">
+<!-- Title of quiz -->
+   <p><img src="oae.jpg" alt="Online Aptitude Exam" />
+   <span>Grunwald Testing, Inc.</span><br />
+   1101 Science Drive<br />
+   Oakdale, CA 88191
+   </p>
+</div>
+<!-- This is the directions on the left -->
+<div id="intro">
+   <p>This is a timed quiz of intelligence and perception. Your final score will
+   be based on the number of correct answers and the time required to submit those
+   answers.</p>
+   <p>To start the quiz, click the <b>Start Quiz</b> button below, which will 
+   reveal the first page of quiz questions and start the timer. When you have 
+   completed the questions, click the <b>Submit Answers</b> button on the quiz 
+   form.</p>
+   <!-- This is the button that says Start Quiz  -->
+   <p id="buttons">
+<!-- This starts the clock right when you click the button Start Quiz -->
+      <input type="button" value="Start Quiz" onclick="startClock()" />
+      <br />
+      <input name="quizclock" id="quizclock" value="0" />
+   </p>
+</div>
+<!-- These are the questions and answers, quiz gets generated -->
+<div id="questions">
+   <h1>Page 1: Pattern Recognition</h1>
+   <table id="quiztable">
+   <tr>
+      <th rowspan="3">1.</th>
+      <td colspan="2">Enter the next number in this sequence: 1, 3, 4, 7, 11, 18, ...</td>
+   </tr>
+   <tr>
+<!-- Radio buttons are used to click in your answer -->
+      <td><input type="radio" name="q1" />a) 22</td>
+      <td><input type="radio" name="q1" />c) 28</td>
+   </tr>
+   <tr>
+      <td id="cor1"><input type="radio" name="q1" />b) 29</td>
+      <td><input type="radio" name="q1" />d) 32</td>
+   </tr>
+   <tr>
+      <th rowspan="3">2.</th>
+      <td colspan="2">Enter the final three numbers in this sequence: 8, 5, 4, 9, 1, 7, 6, ...</td>
+   </tr>
+   <tr>
+      <td id="cor2"><input type="radio" name="q2" />a) 10, 3, 2</td>
+      <td><input type="radio" name="q2" />c) 2, 3, 10</td>
+   </tr>
+   <tr>
+      <td><input type="radio" name="q2" />b) 2, 10, 3</td>
+      <td><input type="radio" name="q2" />d) 10, 2, 3</td>
+   </tr>
+   <tr>
+      <th rowspan="3">3.</th>
+      <td colspan="2">Enter the next letter in this sequence: j, f, m, a, m, j, j, ...</td>
+   </tr>
+   <tr>
+      <td><input type="radio" name="q3" />a) j</td>
+      <td><input type="radio" name="q3" />c) f</td>
+   </tr>
+   <tr>
+      <td><input type="radio" name="q3" />b) m</td>
+      <td id="cor3"><input type="radio" name="q3" />d) a</td>
+   </tr>
+   <tr>
+      <th rowspan="3">4.</th>
+      <td colspan="2">What letter in this set does not belong?: A, B, D, G, J, S, O</td>
+   </tr>
+   <tr>
+      <td id="cor4"><input type="radio" name="q4" />a) A</td>
+      <td><input type="radio" name="q4" />c) J</td>
+   </tr>
+   <tr>
+      <td><input type="radio" name="q4" />b) B</td>
+      <td><input type="radio" name="q4" />d) O</td>
+   </tr>
+   <tr>
+      <th rowspan="3">5.</th>
+      <td colspan="2">What is the next figure in the following sequence?:<br />
+         <img src="figures.jpg" alt="" />
+      </td>
+   </tr>
+   <tr>
+      <td><input type="radio" name="q5" />a) <img src="figa.jpg" alt="" /></td>
+      <td><input type="radio" name="q5" />c) <img src="figc.jpg" alt="" /></td>
+   </tr>
+   <tr>
+      <td><input type="radio" name="q5" />b) <img src="figb.jpg" alt="" /></td>
+      <td id="cor5"><input type="radio" name="q5" />d) <img src="figd.jpg" alt="" /></td>
+   </tr>
+   <tr>
+      <td colspan="3" style="text-align: center">
+         <hr />
+<!-- Sumbit answers button. Right when you click it, the clock stops and a alert pops up -->
+         <input type="button" value="Submit Answers" onclick="stopClock()" />
+      </td>
+   </tr>
+   </table>
+</div>
+</form>
+</body>
+</html>

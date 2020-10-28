@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 2
+   Case Problem 3
+
+   Jackson Electronics World Clock
+   Author: Jake Lorah
+   Date:   1/19/17
+
+   Filename:         world.htm
+   Supporting files: je.css, logo.mpg, map.jpg, zones.js
+-->
+   <title>Jackson Electronics World Clock</title>
+<!-- This is calling the external css file je.css -->
+   <link href="je.css" rel="stylesheet" type="text/css" />
+<!-- This is calling the external js file zones.js -->
+   <script type="text/javascript" src="zones.js"></script>
+<!-- This is creating a function called worldClock that assigns the variable today to the current date -->
+   <script type="text/javascript">
+      function worldClock() {
+         var today = new Date();
+         var offSet = today.getTimezoneOffset()*60*1000;
+         var GMT = addTime(today, offSet);
+<!-- This takes each of the time zones and subtracts/adds a certain amount of time depending on where it is -->
+         var time1 = addTime(GMT, -360*60*1000);
+         var time2 = GMT;
+         var time3 = addTime(GMT, -300*60*1000);
+         var time4 = addTime(GMT, -480*60*1000);
+         var time5 = addTime(GMT, 660*60*1000);
+         var time6 = addTime(GMT, 540*60*1000);
+<!-- This writes the current time in each of the boxes -->
+         document.zones.place1.value=showTime(time1);
+         document.zones.place2.value=showTime(time2);
+         document.zones.place3.value=showTime(time3);
+         document.zones.place4.value=showTime(time4);
+         document.zones.place5.value=showTime(time5);
+         document.zones.place6.value=showTime(time6);
+      }
+   </script>
+</head>
+<!-- This delays the time so when you load the page, it takes a few seconds for the times to show up -->
+<body onload="setInterval('worldClock()',1000)">
+<form id="zones" name="zones" action="">
+<!-- This is the logo at the top left of the page and the title -->
+<div id="headbar">
+   <img src="logo.jpg" alt="Jackson Electronics" />
+   <h2>Corporate Headquarters World Clock</h2>
+</div>
+<!-- This is where each of the boxes are on the map, and the size of the boxes -->
+<div id="timemap">
+   <input id="place1" name="place1" size="7"  />
+   <input id="place2" name="place2" size="7"  />
+   <input id="place3" name="place3" size="7"  />
+   <input id="place4" name="place4" size="7"  />
+   <input id="place5" name="place5" size="7"  />
+   <input id="place6" name="place6" size="7"  />
+<!-- This is the picture of the map, and the name of the time regions below the map -->
+   <img src="map.jpg" alt="World Map" id="map" />
+   <table>
+   <tr>
+   <th id="name1">Houston</th>
+   <th id="name2">London</th>
+   <th id="name3">New York</th>
+   <th id="name4">Seattle</th>
+   <th id="name5">Sydney</th>
+   <th id="name6">Tokyo</th>
+   </tr>
+   </table>
+<!-- This is the 3 by 3 table at the bottom, with each of the different Jackson Electronics stores -->
+   <table>
+   <tr>
+   <td id="address3">
+      <p><b>Jackson Electronics USA</b><br />
+         10010 Park Street<br />
+         New York, NY 10001<br />
+         <b>Phone: </b>(212) 555-1209<br />
+         <b>Fax: </b>(212) 555-4001
+      </p>
+   </td>
+   <td id="address4">
+      <p><b>Jackson Electronics Ltd.</b><br />
+         2349 Mitchell Street<br />
+         Seattle, WA 65091<br />
+         <b>Phone: </b>(381) 555-5499<br />
+         <b>Fax: </b>(381) 555-3181
+      </p>
+   </td>
+   <td id="address1">
+      <p><b>Jackson Electronics Latin America</b><br />
+         5150 Shasta Lane<br />
+         Houston, TX 32821<br />
+         <b>Phone: </b>(817) 555-8190<br />
+         <b>Fax: </b>(817) 555-2881
+      </p>
+   </td>
+   </tr>
+   <tr>
+   <td id="address2">
+      <p><b>Jackson Electronics Europe</b><br />
+         18 Northland Avenue<br />
+         London, England WC2N 5EA<br />
+         <b>Phone: </b>(+44) 0 870 555 7081<br />
+         <b>Fax: </b>(+44) 0 870 555 1788
+      </p>
+   </td>
+   <td id="address5">
+      <p><b>Jackson Electronics Pacifica</b><br />
+         171-105 Thomas Street<br />
+         Sydney NSW 2000, Australia<br />
+         <b>Phone: </b>(+61) 2 5555 8993<br />
+         <b>Fax: </b>(+61) 2 5555 7171
+      </p>
+   </td>
+   <td id="address6">
+      <p><b>Jackson Electronics Asia</b><br />
+         1-2-99 Sumiyoshi<br />
+         Hakata-Ku<br />
+         Tokyo 140-8781 Japan<br />
+         <b>Phone: </b>(+81) 3 5551 7817<br />
+         <b>Fax: </b>(+81) 3 5551 2398
+      </p>
+   </td>
+   </tr>
+   </table>
+</div>
+</form>
+</body>
+</html>

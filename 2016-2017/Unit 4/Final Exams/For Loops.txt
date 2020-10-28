@@ -1,0 +1,10 @@
+for (statement 1; statement 2; statement 3) {
+    code block to be executed
+}
+
+
+
+
+for (i = 0; i < 5; i++) {
+    text += "The number is " + i + "<br>";
+}

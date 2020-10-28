@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 2
+   Case Problem 2
+
+   The Home Center
+   Author: Jake Lorah
+   Date:   1/17/17
+
+   Filename:         home.htm
+   Supporting files: logo.jpg, random.js, styles.css, tips.js, work.jpg
+-->
+   <title>The Home Center</title>
+   <link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- This is calling the external file random.js -->
+   <script src="random.js" type="text/javascript"></script>
+<!-- This is calling the external file tips.js -->
+   <script src="tips.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- This is the searchbox at the top right of the page. You may type in the box as a user -->
+<div id="searchbox">
+   Search <input size="20" />
+</div>
+<!-- These are the links and pic on the left of the page. The links don't currently go anywhere -->
+<div id="links">
+  <img src="logo.jpg" alt="the Home Center" />
+  <ul>
+     <li><a href="#">Home</a></li>
+     <li class="new"><a href="#">What's New</a></li>
+     <li><a href="#">Home Projects</a></li>
+     <li><a href="#">E-Newsletter</a></li>
+     <li><a href="#">FAQ</a></li>
+     <li class="new"><a href="#">Online Store</a></li>
+     <li><a href="#">Product Search</a></li>
+     <li class="new"><a href="#">Forums</a></li>
+     <li><a href="#">Our Partners</a></li>
+     <li><a href="#">Contact Us!</a></li>
+     <li><a href="#">About the Home Center</a></li>
+   </ul>
+</div>
+<!-- This will keep generating random tips each time you reload the page  -->
+<div id="main">
+   <div id="tip">
+      <script type="text/javascript">
+         var tipNum = randInt(1,10);
+         document.write("<h1>");
+         document.write("Random Tip<br />");
+         document.write(tipTitle(tipNum));
+         document.write("</h1>");
+         document.write("<p>");
+         document.write(tipText(tipNum));
+         document.write("</p>");
+      </script>
+   </div>
+<!-- This is all the information in the middle of the page -->
+   <p id="firstp"><b>The Home Center</b> is your number one source for 
+   do-it-yourself home improvement help with tutorials and tips on all your home 
+   repairs, remodeling, and redecorating. Our goal is to make your projects easy, 
+   inexpensive, and rewarding. Nothing matches the satisfaction of a job well done.</p>
+
+   <p>You will find step-by-step instructions and money-saving tips on all your 
+   do-it-yourself projects, including house painting, wallpaper, carpentry, home 
+   insulation, woodworking, electrical, plumbing, air conditioning and heating, 
+   flooring, masonry, concrete, wood decks, interior decorating, gardening, 
+   and the installation of energy-efficient fixtures and appliances</p>
+
+   <p>Be sure to visit our online store for great prices on the tools and 
+   materials you need for your home repair projects!</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/*
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 3
+   Case Problem 4
+
+   Author: Jake Lorah
+   Date: 2/27/17
+
+   Filename: calendar.css
+
+   This file contains styles applied to the lunar calendar table
+*/
+
+#calendar_table    {background-color: black; font-size: 9pt; color: white; 
+                    font-family: Arial, Helvetica, sans-serif;
+                    border-style: outset; border-width: 5px; margin-left: auto;
+                    margin-right: auto}
+
+#calendar_head     {background-color: black; color: white; letter-spacing: 4}
+
+.calendar_weekdays {width: 70px; font-size: 10pt; border-bottom-style: solid}
+
+.calendar_dates    {text-align: center; background-color: black; color: white; 
+                    border: 1px solid white}

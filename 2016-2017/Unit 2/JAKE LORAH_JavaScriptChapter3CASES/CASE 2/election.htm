@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 3
+   Case Problem 2
+
+   Congressional Election Results
+   Author: Jake Lorah 
+   Date: 2/25/17   
+
+   Filename:         election.htm
+   Supporting files: back.jpg, logo.jpg, results.css, votes.js
+
+-->
+<!--These are the files associated with the main page-->
+   <title>Congressional Races</title>
+   <link href="results.css" rel="stylesheet" type="text/css" />
+
+   <script type="text/javascript" src="votes.js"></script>
+   <script type="text/javascript">
+<!--This returns the variable total once the for loop has passed-->
+      function totalVotes(votes) {
+         var total=0;
+         for (var i=0; i<votes.length; i++) total+=votes[i];
+         return total;
+      }
+<!--This takes the function calcPercent and rounds it-->
+      function calcPercent(item, sum) {
+         return Math.round(100*item/sum);
+      }
+<!--This is the bar graph. This assigns the colors,and how the graph should be presented-->
+      function createBar(partyType, percent) {
+         switch (partyType) {
+            case "D": barText="<td class='dem'> </td>";break;
+            case "R": barText="<td class='rep'> </td>";break;
+            case "I": barText="<td class='ind'> </td>";break;
+            case "G": barText="<td class='green'> </td>";break;
+            case "L": barText="<td class='lib'> </td>";break;
+         }
+
+         for (var j=1; j<=percent; j++) document.write(barText);
+      }
+<!--This is the info to the left of each bar graph. Candidates and votes-->
+      function showResults(race, name, party, votes) {
+         var totalV=totalVotes(votes);
+         document.write("<h2>"+race+"</h2>");
+         document.write("<table cellspacing='0'>");
+         document.write("<tr><th>Candidate</th><th class='num'>Votes</th><th class='num'>%</th></tr>");
+         for (var i=0; i<name.length; i++) {
+            document.write("<tr>");
+            document.write("<td>"+name[i]+" ("+party[i]+")</td>");
+            document.write("<td class='num'>"+votes[i]+"</td>");
+
+            var percent = calcPercent(votes[i],totalV);
+            document.write("<td class='num'>("+percent+"%)</td>");
+
+            createBar(party[i], percent);
+
+            document.write("</tr>");
+         }
+
+         document.write("</table>");
+      }
+   </script>
+
+</head>
+<!--These are the links at the left of the page. They don't go anywhere-->
+<body>
+
+   <div id="intro">
+      <p><img src="logo.jpg" alt="Election Day Results" /></p>
+      <a href="#">Election Home Page</a>
+      <a href="#">President</a>
+      <a href="#">Senate Races</a>
+      <a href="#">Congressional Races</a>
+      <a href="#">State Senate</a>
+      <a href="#">State House</a>
+      <a href="#">Local Races</a>
+      <a href="#">Judicial</a>
+      <a href="#">Referendums</a>
+   </div>
+<!--This shows the results from the bar graph and the percents-->
+   <div id="results">
+      <h1>Congressional Races</h1>
+
+      <script type="text/javascript">
+         showResults(race[0],name1,party1,votes1);
+         showResults(race[1],name2,party2,votes2);
+         showResults(race[2],name3,party3,votes3);
+         showResults(race[3],name4,party4,votes4);
+         showResults(race[4],name5,party5,votes5);
+      </script>
+   </div>
+
+</body>
+</html>

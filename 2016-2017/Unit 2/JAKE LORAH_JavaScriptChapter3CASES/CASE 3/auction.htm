@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 3
+   Case Problem 3
+
+   Schmitt AuctionHaus
+   Author: Jake Lorah 
+   Date: 2/26/17   
+
+   Filename:         auction.htm
+   Supporting files: logo.jpg, styles.css
+
+-->
+<!--These are the files associated with the main page-->
+   <title>Auction Log</title>
+   <link href="styles.css" rel="stylesheet" type="text/css" />
+<!--You are making three new arrays-->
+   <script type="text/javascript">
+      var bids = new Array();
+      var bidders = new Array();
+      var bidTime = new Array();
+<!--This functions writes whatever bid the user enters-->
+      function writeBid() {
+         var historyText="";
+         for (var i=0; i<bids.length; i++) {
+            historyText +=bidTime[i]+" "+bids[i]+"("+bidders[i]+") \n";
+         }
+         document.bidForm.bidList.value=historyText;
+         document.bidForm.highBid.value=bids[0];
+         document.bidForm.bidId.value="";
+         document.bidForm.bidAmount.value="";
+      }
+<!--This function uses the unshift method to edit the bid-->
+      function addBid() {
+         bidders.unshift(document.bidForm.bidId.value);
+         bids.unshift(document.bidForm.bidAmount.value);
+<!--This writes the current time you entered the bid-->
+         var now = new Date();
+         var hours = now.getHours();
+         var minutes = now.getMinutes();
+         var seconds = now.getSeconds();
+
+         // add leading zeros to minutes and seconds less than 10
+         minutes = minutes < 10 ? "0"+minutes : minutes
+         seconds = seconds < 10 ? "0"+seconds : seconds;
+         var timeText = "["+hours+":"+minutes+":"+seconds+"]";
+
+         bidTime.unshift(timeText);
+
+         writeBid();
+      }
+
+      function removeBid() {
+         bidders.shift();
+         bids.shift();
+         bidTime.shift();
+         writeBid();
+      }
+  
+
+   </script>
+</head>
+<!--This is the form itself. This gives you the option to type in your bid id and bid amount-->
+<body>
+   <form name="bidForm" id="bidForm">
+
+   <div id="head">
+      <p>
+         <a href="#">Home</a> <a href="#">Auctions</a>
+         <a href="#">Features</a> <a href="#">Schedule</a>
+         <a href="#">Contacts</a>
+      </p>
+      <img src="logo.jpg" alt="Schmitt Auction Haus" /></div>
+
+   <div id="intro">
+      <h1>Silent Auction</h1>
+      <h2>Tawney Farm</h2>
+      <table id="summarytable" border="2">
+         <tr>
+            <th>Lot #121</th>
+            <td>TurfTuff Lawn Tractor X24 (2003)</td>
+         </tr>
+         <tr>
+            <th>Current High Bid</th>
+            <td>
+               <input id="highBid" name="highBid" readonly="readonly" />
+            </td>
+         </tr>
+         <tr>
+            <th>Bidding Ends</th>
+            <td>15:00</td>
+         </tr>
+      </table>
+
+      <table id="newbidtable" border="2">
+         <tr>
+            <th colspan="2" id="newtitle">Enter New Bid</th>
+         </tr>
+         <tr>
+            <th>Bidder ID</th>
+            <td>
+               <input id="bidId" name="bidId" />
+            </td>
+         </tr>
+         <tr>
+            <th>Bid Amount</th>
+            <td>
+               <input id="bidAmount" name="bidAmount" />
+            </td>
+         </tr>
+         <tr>
+            <th id="buttons" colspan="2">
+               <input type="button" value="Submit" onclick="addBid()" />
+               <input type="button" value="Remove Last Bid" onclick="removeBid()" />
+            </th>
+         </tr>
+      </table>
+
+   </div>
+
+   <div id="bidHistory">
+      <h1>Bid History</h1>
+      <p>
+         <textarea id="bidList" name="bidList"></textarea>
+      </p>
+   </div>
+<!--This is the footer at the bottom of the page-->
+   <address>
+      Schmitt AuctionHaus &#183;
+      3401 Rural Route 4 &#183;
+      Fenbrook, IN  38012
+   </address>
+
+
+   </form>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script type="text/javascript">
+   function returnMonth() {
+      var month =  new Array("What is an array?<br> It is a collection of data values organized under a single name with each value referenced by a index number.", "What command creates an array named dayNames?<br> var dayNames = new Array ();", "What command both creates and populates the dayNames array with abbreviations of the seven days of the week starting with Sun and going through Sat?<br> var dayNames = new Array (sun, mon, tue, wed, thu, fri, sat)",  "What expressions returns the third value from the array dayNames?<br>dayNames[2]", "What command creates the dayNames array as an array literal?<br> var dayNames = [sun, mon, tue, wed, thu, fri, sat];", "What command sorts the dayNames array in alphabetical order?<br> dayNames.sort();", "What command extracts the middle five values from the dayNames array?<br> dayNames.slice(1,6);", "What command converts the contents of the dayNames array to a text string with each value seperated by a comma?<br> dayNames.toString();", "1.What is an array?<br> It is a collection of data values organized under a single name with each value referenced by a index number., <br>2.What command creates an array named dayNames?<br> var dayNames = new Array (); , <br>3.What command both creates and populates the dayNames array with abbreviations of the seven days of the week starting with Sun and going through Sat?<br> var dayNames = new Array (sun, mon, tue, wed, thu, fri, sat),  <br>4.What expressions returns the third value from the array dayNames?<br>dayNames[2] , <br>5.What command creates the dayNames array as an array literal?<br> var dayNames = [sun, mon, tue, wed, thu, fri, sat];, <br>6.What command sorts the dayNames array in alphabetical order?<br> dayNames.sort();, <br>7.What command extracts the middle five values from the dayNames array?<br>dayNames.slice(1,6);, <br>8.What command converts the contents of the dayNames array to a text string with each value seperated by a comma?<br> dayNames.toString();");
+      var userInput = prompt("Please give a number 1-8 for a question and answer. Print 9 for all questions and answers.");
+      userInput = userInput-1
+      document.write("" + month[userInput]);
+    }
+   </script>
+</head>
+<body onLoad="returnMonth()">
+</body>
+</html>

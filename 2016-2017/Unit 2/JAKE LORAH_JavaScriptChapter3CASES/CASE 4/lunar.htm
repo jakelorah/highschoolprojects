@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 3
+   Case Problem 4
+
+   Lunar Calendar
+   Author: Jake Lorah 
+   Date: 2/27/17   
+
+   Filename:         lunar.htm
+   Supporting files: astro.css, calendar.js, lunarcal.js, moonfunc.js, 
+                     phase0.jpg - phase15.jpg, skyweb.jpg
+
+-->
+<!--These are the files associated with the main page-->
+   <title>Lunar Calendar</title>
+   <link href="astro.css" rel="stylesheet" type="text/css" />
+   <link href="calendar.css" rel="stylesheet" type="text/css" />
+
+   <script type="text/javascript" src="moonfunc.js"></script>
+
+   <script type="text/javascript" src="lunarcal.js"></script>
+
+   <script type="text/javascript">
+      var calendarDay=new Date("August 8, 2011");
+<!--This function populates the months of the year-->
+      function writeDate(calendarDay) {
+         var monthName = new Array("January", "February", "March", "April", "May", 
+         "June", "July", "August", "September", "October", "November", "December");
+<!--These variables get the current month, full 4 digit year, and day-->
+         var thisMonth=calendarDay.getMonth();
+         var thisYear=calendarDay.getFullYear();
+         var thisDate=calendarDay.getDate();
+
+         return monthName[thisMonth]+" "+thisDate+", "+thisYear;     
+      }
+   </script>
+
+</head>
+
+<body>
+<div id="doc">
+<!--This is the sky web pic at the top of the page -->
+   <div id="head">
+      <img src="skyweb.jpg" alt="SkyWeb" />
+   </div>
+<!--This is the Title Phases of the Moon and the table to the right-->
+   <h1>Phases of the Moon</h1>
+   <table id="summary" border="1">
+      <tr>
+         <th id="sumtitle" colspan="3">
+            <script type="text/javascript">
+               document.write("Today: "+writeDate(calendarDay));
+            </script>
+         </th>
+      </tr>
+      <tr>
+         <td rowspan="5" id="lunarimg">
+            <script type="text/javascript">
+               document.write("<img src='phase"+calcMPhase(calendarDay)+".jpg' />");
+            </script>
+         </td>
+         <th>Moon's Age</th>
+         <td>
+            <script type="text/javascript">
+               document.write(calcMAge(calendarDay)+" days");
+            </script>
+         </td>
+      </tr>
+      <tr>
+         <th>Right Ascension</th>
+         <td>
+            <script type="text/javascript">
+               document.write(calcMRA(calendarDay)+"&deg;");
+            </script>
+         </td>
+      </tr>
+      <tr>
+         <th>Declination</th>
+         <td>
+            <script type="text/javascript">
+               document.write(calcMDec(calendarDay)+"&deg;");
+            </script>
+         </td>
+      </tr>
+      <tr>
+         <th>In Constellation</th>
+         <td>
+            <script type="text/javascript">
+               document.write(calcMZodiac(calendarDay));
+            </script>
+         </td>
+      </tr>
+      <tr>
+         <th>Distance (Earth Radii)</th>
+         <td>
+            <script type="text/javascript">
+               document.write(calcMDist(calendarDay));
+            </script>
+         </td>
+      </tr>
+   </table>
+<!--This is the main paragraph info-->
+   <p>As the Moon orbits the Earth the portion we see illuminated changes
+      from day to day. The start of each phase occurs with the 
+      <b>new Moon</b> in which the Moon does not appear illuminated from 
+      the Earth. The Moon takes 27.3 days to orbit Earth, but the 
+      lunar phase cycle (from new Moon to new Moon) is 29.5 days. 
+      This is because the Moon spends an extra 2.2 days "catching up" as 
+      the Earth travels about 45 million miles around the Sun 
+      during the time the Moon completes one orbit around Earth.</p>
+
+   <p>Astronomers often refer to a <b>Lunar Calendar</b> to track the phases 
+      of the Moon. Generally astronomers do not want to observe the night sky 
+      during those times the Moon is highly illuminated because moonlight can 
+      obscure the light from fainter objects such as stars, planets, and
+      nebulae. Below is a sample Lunar Calendar for the current month. 
+      Happy Moon-gazing!</p>
+
+   <div id="lunar_cal">
+      <script type="text/javascript">
+         lunar_calendar(calendarDay);
+      </script>
+   </div>
+<!--These are the links at the bottom of the page. They don't go anywhere-->
+   <table id="links">
+      <tr>
+         <td>
+         | Home Page | The Night Sky | The Moon | The Planets | The Messier Objects | Stars |
+         </td>
+      </tr>
+   </table>
+
+</div>
+</body>
+</html>

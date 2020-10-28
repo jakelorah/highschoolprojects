@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+ Jake Lorah
+<br>
+<br>
+<center><b><font size="5" color="black">Chapter 2 Knowledge Check</font></center></b>
+<br>
+<body bgcolor="#e0f7fa">
+<script>
+var daysofweek = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var day = weekday[daysofweek.getDay()];
+if (day == weekday[1]) {
+ alert("Today is Monday");
+} else if (day == weekday[2]) {
+ alert("Today is Tuesday");
+} else if (day == weekday[3]) {
+ alert("Today is Wednesday");
+} else if (day == weekday[4]) {
+ alert("Today is Thursday");
+} else if (day == weekday[5]) {
+ alert("Today is Friday");
+} else if (day == weekday[6]) {
+ alert("Today is Saturday");
+} else if (day == weekday[1]) {
+ alert("Today is Sunday");
+}
+</script>
+ <script type="text/javascript">
+   function returnMonth() {
+   var month =  new Array   
+(
+"A field name can contain this number of characters.<br>64", 
+
+"Assign a field this data type if the field will contain dollar values that you do not want rounded off in calculations.<br>Currency", 
+
+"This is the term for the field in a table that must contain unique information for each record.<br>Primary key",  
+
+"Enter a value in this field property if you want the value to appear automatically in the field whenever a new record is created.<br>Default value", 
+
+"Enter a statement in this field property to prevent data that does not meet the range or other criteria from being entered into the field.<br>Validation rule", 
+
+"This is the field property that controls data as it is being entered by ensuring data typed in the field conforms to the code entered in the property box.<br>Best Fit", 
+
+"This field property controls how data is displayed after it has been accepted for entry in the field.<br>Format",
+
+"This is the name of the wizard used to create a drop-down list in a field.<br>Input mask wizard", 
+
+"This button can be used to add a SUM function to the bottom of a numeric field in the datasheet.<br>Totals",
+
+"One table in a relationship is referred to as the primary table. The other table is referred to as this.<br>Related tables",
+
+"In this type of relationship one table can have only one record with a matching field value in the common field while the other table can have several records with a matching field value.<br>One-to-many",
+
+"This is the term for the black line that displays between the common field name in the two field list boxes after a relationship has been created.<br>Join line",
+
+"This type of relationship is created when the field used to join the two tables is the primary key in both tables.<br>One-to-one",
+
+"Turn this relationship option on to make sure new records are added first to the primary table before a record with a matching value in the common field can be added to the related table.<br>Related tools",
+
+"Click this button in the Relationships window to print a hard copy of the relationships.<br>Print",
+
+
+
+
+
+
+"1. A field name can contain this number of characters.<br>64<br>2. Assign a field this data type if the field will contain dollar values that you do not want rounded off in calculations.<br>Currency<br> 3. This is the term for the field in a table that must contain unique information for each record.<br>Primary key<br>  4. Enter a value in this field property if you want the value to appear automatically in the field whenever a new record is created.<br>Default value<br> 5. Enter a statement in this field property to prevent data that does not meet the range or other criteria from being entered into the field.<br>Validation rule<br> 6. This is the field property that controls data as it is being entered by ensuring data typed in the field conforms to the code entered in the property box.<br>Input mask<br> 7. This field property controls how data is displayed after it has been accepted for entry in the field.<br>Format<br> 8. This is the name of the wizard used to create a drop-down list in a field.<br>Input mask wizard<br> 9. This button can be used to add a SUM function to the bottom of a numeric field in the datasheet.<br>Totals<br> 10. One table in a relationship is referred to as the primary table. The other table is referred to as this.<br>Related tables<br> 11. In this type of relationship one table can have only one record with a matching field value in the common field while the other table can have several records with a matching field value.<br>One-to-many<br> 12. This is the term for the black line that displays between the common field name in the two field list boxes after a relationship has been created.<br>Join line<br> 13. This type of relationship is created when the field used to join the two tables is the primary key in both tables.<br>One-to-one<br> 14. Turn this relationship option on to make sure new records are added first to the primary table before a record with a matching value in the common field can be added to the related table.<br>Related tools<br> 15. Click this button in the Relationships window to print a hard copy of the relationships.<br>Print");
+
+do{      
+var userInput = prompt("Please give a number 1-15 for a question and answer. Print 16 for all questions and answers. Print 0 to exit");
+}
+while (userInput < 0 || userInput > 16)
+       userInput = userInput-1
+      document.write("" + month[userInput]);
+    }
+
+
+switch(userInput){
+               case -1: window.close();
+               break;
+               }
+	document.write(userInput[x]);
+
+   </script>
+</head>
+<body onLoad="returnMonth()">
+</body>
+</htm

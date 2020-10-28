@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Key()
+comment0.text=\r\n\ Create\ a\ new\ key.\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Do\ the\ action\ for\ this\ key.\r\n
+comment2.params=
+comment2.target=void\ play()
+comment2.text=\r\n\ Play\ the\ note\ of\ this\ key.\r\n
+numComments=3

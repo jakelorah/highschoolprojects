@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Body
+comment1.params=
+comment1.target=Body()
+comment1.text=\r\n\ Construct\ a\ Body\ with\ default\ size,\ mass,\ movement\ and\ color.\r\n
+comment2.params=size\ mass\ movement\ color
+comment2.target=Body(int,\ double,\ Vector,\ greenfoot.Color)
+comment2.text=\r\n\ Construct\ a\ Body\ with\ a\ specified\ size,\ mass,\ movement\ and\ color.\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Act.\ That\ is\:\ apply\ \ the\ gravitation\ forces\ from\r\n\ all\ other\ bodies\ around,\ and\ then\ move.\r\n
+comment4.params=
+comment4.target=void\ bounceAtEdge()
+comment4.text=\r\n\ Check\ whether\ we\ have\ hit\ the\ edge\ of\ the\ universe.\ If\ so,\ bounce\ off\ it.\r\n
+comment5.params=
+comment5.target=void\ applyForces()
+comment5.text=\r\n\ Apply\ the\ forces\ of\ gravity\ from\ all\ other\ celestial\ bodies\ in\ this\ universe.\r\n
+comment6.params=other
+comment6.target=void\ applyGravity(Body)
+comment6.text=\r\n\ Apply\ the\ gravity\ force\ of\ a\ given\ body\ to\ this\ one.\r\n
+comment7.params=
+comment7.target=double\ getMass()
+comment7.text=\r\n\ Return\ the\ mass\ of\ this\ body.\r\n
+numComments=8

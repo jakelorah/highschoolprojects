@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var daysofweek = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var day = weekday[daysofweek.getDay()];
+if (day == weekday[1]) {
+ alert("Today is Monday. I'm sorry.");
+} else if (day == weekday[2]) {
+ alert("Today is Tuesday");
+} else if (day == weekday[3]) {
+ alert("Today is Wednesday");
+} else if (day == weekday[4]) {
+ alert("Today is Thursday");
+} else if (day == weekday[5]) {
+ alert("Today is Friday, have a good weekend");
+} else if (day == weekday[6]) {
+ alert("Today is Saturday");
+} else if (day == weekday[1]) {
+ alert("Today is Sunday");
+}
+</script>
+ <script type="text/javascript">
+   function returnMonth() {
+      var month =  new Array("What is a program loop? Name three types of program loops supported by JavaScript.<br> Program loops are a set of commands executed repeatedly until a stopping condition has been met. Three types are FOR, WHILE, and DO/WHILE.", "What expressions would you place in a FOR statement to use a counter variable named i that starts with the value 0 and continues up to 100 in increments of 10?<br> for (var i = 0; i<=100; i+=10)", "What FOR statement creates a table row consisting of five table cells? Assume the table cells display the text Column i where i is the value of the counter variable and the value of the counter variable ranges from 1 to 5 in increments of 1.<br> for (var i=1; i<=5; i++)",  "What is a conditional statement? What is the most commonly used conditional statement?<br>A conditional statement is a statement that runs a command block only when certain conditions are met. The most common one is the IF statement.", "What code writes the text Internet Explorer Browser to the document if the Boolean variable WebBrowser equals true?<br> if (WebBrowser) or if (WebBrowser == true)", "The WebBrowser variable has been changed to a text string variable that can equal either IE or Mozilla. Write an IF ELSE statement to display the text Internet Explorer Browser if WebBrowser equals IE and Mozilla Browser otherwise.<br> if (WebBrowser == IE) ELSE Mozilla Browser", "The WebBrowser variable can now equal IE, Opera, Safari, or Firefrox. Change the IF ELSE Statements to fit in.<br> if (WebBrowser == IE) ELSE WebBrowser = Opera ELSE WebBrowser = Safari ELSE WebBrowser = Firefox", "Answer question 7 using a switch statement. Use a break statement to break off from processing.<br> switch (WebBrowser) case IE case Opera case Firefox", "1.What is a program loop? Name three types of program loops supported by JavaScript.<br> Program loops are a set of commands executed repeatedly until a stopping condition has been met. Three types are FOR, WHILE, and DO/WHILE.<br> 2.What expressions would you place in a FOR statement to use a counter variable named i that starts with the value 0 and continues up to 100 in increments of 10?<br> for (var i = 0; i<=100; i+=10) <br> 3.What FOR statement creates a table row consisting of five table cells? Assume the table cells display the text Column i where i is the value of the counter variable and the value of the counter variable ranges from 1 to 5 in increments of 1.<br> for (var i=1; i<=5; i++)<br>  4.What is a conditional statement? What is the most commonly used conditional statement?<br>A conditional statement is a statement that runs a command block only when certain conditions are met. The most common one is the IF statement. <br> 5.What code writes the text Internet Explorer Browser to the document if the Boolean variable WebBrowser equals true?<br> if (WebBrowser) or if (WebBrowser == true)<br> 6.The WebBrowser variable has been changed to a text string variable that can equal either IE or Mozilla. Write an IF ELSE statement to display the text Internet Explorer Browser if WebBrowser equals IE and Mozilla Browser otherwise. <br>if (WebBrowser == IE) ELSE Mozilla Browser<br> 7.The WebBrowser variable can now equal IE, Opera, Safari, or Firefrox. Change the IF ELSE Statements to fit in.<br>if (WebBrowser == IE) ELSE WebBrowser = Opera ELSE WebBrowser = Safari ELSE WebBrowser = Firefox<br> 8.Answer question 7 using a switch statement. Use a break statement to break off from processing. <br>switch (WebBrowser) case IE case Opera case Firefox");
+var userInput = prompt("Please give a number 1-8 for a question and answer. Print 9 for all questions and answers.");
+      userInput = userInput-1
+      document.write("" + month[userInput]);
+    }
+   </script>
+</head>
+<body onLoad="returnMonth()">
+</body>
+</html>

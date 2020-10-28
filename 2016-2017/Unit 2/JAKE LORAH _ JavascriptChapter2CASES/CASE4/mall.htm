@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<!-- 
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 2
+   Case Problem 4
+
+   The Cutler Shopping Mall
+   Author: Jake Lorah 
+   Date: 1/19/17   
+
+   Filename:         mall.htm
+   Supporting files: clock.js, logo.jpg, mall.css, mall1.jpg, mall2.jpg, mall3.jpg, time.js
+-->
+
+   <title>The Cutler Shopping Mall</title>
+   <link href="mall.css" rel="stylesheet" type="text/css" />
+<!-- This is calling the time.js file -->
+   <script type="text/javascript" src="time.js"></script>
+   <script type="text/javascript">
+<!-- This is creating a function called countDownClock -->
+      function countDownClock() {
+<!-- the today variable contains the current date and time -->
+            var today = new Date();
+<!-- the date and time of the mall opening -->
+            var opening = new Date("March 23, 2011 09:00:00");
+<!-- calculate the current year in 4 digits -->
+            thisYear = today.getFullYear();
+            opening.setFullYear(thisYear);
+<!-- This is required for the year, otherwise year would start at 0 -->
+            openingYear = (opening - today) < 0 ? thisYear+1 : thisYear;
+            opening.setFullYear(openingYear);
+<!-- This grabs the current date and time -->
+            document.mallclock.dayNow.value=showDate(today);
+            document.mallclock.timeNow.value=showTime(today);
+<!-- This is the format of the time. Format is days, hours, minutes -->
+            document.mallclock.days.value=daysDiff(today, opening);
+            document.mallclock.hours.value=hoursDiff(today, opening);
+            document.mallclock.minutes.value=minutesDiff(today, opening);
+         }     
+   </script>
+</head>
+<!-- This refreshes the countdown when you load the page-->
+<body onload="countDownClock();setInterval('countDownClock()', 60000)">
+   <div id="page">
+   <form name="mallclock" id="mallclock" action="">
+<br>
+<!-- This is the logo centered at the top -->   
+ <div id="logo"><center>
+      <img src="logo.jpg" height="100" width="275" alt="Cutler Shopping Mall" style="float: center" /> </center>
+   </div>
+<!-- These are the links centered at the top of page -->
+<br>
+<center>
+<font size="1">
+   <a href=""    style="text-decoration:none" >Home</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Store Directory</a>&nbsp&nbsp&nbsp&nbsp&nbsp     
+   <a href="" style="text-decoration:none">Gift Ideas</a>&nbsp&nbsp&nbsp&nbsp&nbsp     
+   <a href="" style="text-decoration:none">Mall Gift Cards</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Special Events</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Jobs</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Security</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Leasing</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Sponsorships</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+   <a href="" style="text-decoration:none">Contact Us</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+</header></font></font></span>
+</font>
+</center>
+   <div id="pageContent">
+<!-- All of this is the info in the middle of the page -->
+      <h2>Opening Soon!</h2>
+      <p><img src="mall1.jpg" height="200" alt="" style="float: right; margin: 0px 0px 5px 5px" />
+         The Cutler Shopping Mall is planning a GRAND grand opening with 
+         great sales,contests, family fun events, and more surprises. Plan 
+         to join us on March 23rd at 9am for this special event!</p>
+<br>
+<!-- This is the box in opening soon section that displays current date and time, and countdown -->
+<div id="clock">
+         <label id="now">Current Date and Time</label>
+         <input type="text" id="dayNow" name="dayNow" size="15" />
+         <input type="text" id="timeNow" name="timeNow" size="12" />
+         <br /><br />
+         <label id="countdown">Countdown</label>
+         <input type="text" id="days" name="days" size="3" />
+         <label for="days">day(s)</label>
+         <input type="text" id="hours" name="hours" size="3" />
+         <label for="hours">hour(s)</label>
+         <input type="text" id="minutes" name="minutes" size="3" />
+         <label for="minutes">minute(s)</label>
+      </div>
+      <h2>About the Mall</h2>
+      <p><img src="mall2.jpg" alt="" style="float: right; margin: 0px 0px 5px 5px" />Cutler Mall is home to your favorite stores like Boston Store, JCPenney, 
+         and Sears. We feature more than 110 specialty stores including Aveda, 
+         Williams-Sonoma, Banana Republic, Express, Ann Taylor, Abercrombie &amp; Fitch, 
+         and American Eagle Outfitters. New specialty stores include Pottery Barn, 
+         Coldwater Creek, Hollister Co., Abercrombie, Aeropostale, Weathervane, 
+         Helzberg Diamonds, and Godiva Chocolatier.</p>
+      <p>The Mall has 24 delicious eateries, a family playground, Internet Kiosk, and
+         baby-sitting facilities; making a visit to the Cutler Mall a true 
+         shopping experience.</p>
+<br>
+<center>
+<img src="mall3.jpg" alt="" width="250" height="200" style=" margin: 0px 0px 5px 5px" />
+</center>
+      <u><h3>Mall Hours</h3></u>
+      <ul>
+         Monday - Saturday: 10am - 9pm
+<br>
+         Sunday: 11am - 6pm
+      </ul>
+<hr>
+      <address>
+         The Cutler Mall &#183;
+         20050 Enterprise Avenue &#183;
+         Cutler, IA 43109 &#183;
+         (281) 555-9081
+      </address>
+
+   </div>
+
+   </form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var grades = new Array();
+
+grades[0] = prompt("Enter Grade 1");
+grades[1] = prompt("Enter Grade 2");
+grades[2] = prompt("Enter Grade 3");
+grades[3] = prompt("Enter Grade 4");
+grades[4] = prompt("Enter Grade 5");
+var a = (grades[0]);
+var b = (grades[1]);
+var c = (grades[2]);
+var d = (grades[3]);
+var e = (grades[4]);
+var num1 = parseInt(a);
+var num2 = parseInt(b);
+var num3 = parseInt(c);
+var num4 = parseInt(d);
+var num5 = parseInt(e);
+
+var total = num1 + num2 + num3 + num4 + num5;
+var avg = total / 5;
+    if (avg > 65) {
+        document.write(avg + " - passing.<br>");
+        x=x+grade;
+        countPassing++;
+    }
+    else {
+        document.write("Your Grade:" + avg);
+    }
+</script>
+</body>
+</html>
