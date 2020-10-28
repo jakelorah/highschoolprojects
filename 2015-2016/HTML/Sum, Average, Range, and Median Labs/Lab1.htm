@@ -1,0 +1,88 @@
+(Jake Lorah)<br><br>
+<!DOCTYPE html>
+<html>
+ <head>
+ </head>
+ <body bgcolor=lightyellow>
+  <script>
+   var a1=new Array(10);
+   var ac=new Array(6);
+   for(x=0;x<=5;x++)
+    {
+       ac[x]=0;
+    }
+   for(x=0;x<=9;x++)
+    {
+       r=Math.floor((Math.random()*6)+1);
+      a1[x]=r;
+    }
+   for(x=0;x<=9;x++)
+    {
+       document.write(a1[x]+" ");
+    }
+   document.write(" "+"<br>");
+   for(x=0;x<=9;x++)
+    {
+     if(a1[x]==1)
+      {
+         ac[0]++;
+      }
+     else
+      if(a1[x]==2)
+      {
+         ac[1]++;
+      }
+     else
+      if(a1[x]==3)
+      {
+         ac[2]++;
+      }
+     else
+      if(a1[x]==4)
+      {
+         ac[3]++;
+      }
+     else
+      if(a1[x]==5)
+      {
+         ac[4]++;
+      }
+     else
+      {
+        ac[5]++;
+      }
+ }
+for(x=0;x<=5;x++)
+ {
+    document.write(ac[x]+" ");
+ }
+document.write(" "+"<br>");
+var sum=0;
+for(x=0;x<=9;x++)
+ {
+    sum=sum+a1[x];
+ }
+document.write("SUM="+sum+"<br>");
+document.write("AVG="+(sum/10)+"<br>");
+for(o=0;o<=9;o++)
+ {
+  for(i=0;i<=8;i++)
+   {
+     if(a1[i+1]<a1[i])
+       {
+         z    =a1[i];
+         a1[i]    =a1[i+1];
+         a1[i+1]=z;
+       }
+   }
+ }
+for(x=0;x<=9;x++)
+ {
+     document.write(a1[x]+" ");
+    }
+   document.write(" "+"<br>");
+   document.write("RANGE="+(a1[9]-a1[0])+"<br>");
+   document.write("MEDIAN="+((a1[4]+a1[5])/2)+"<br>");
+  </script>
+ </body>
+</html>

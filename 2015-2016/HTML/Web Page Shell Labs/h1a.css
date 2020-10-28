@@ -1,0 +1,61 @@
+<style>
+    html
+     {
+       margin:   0px, 0px, 0px, 0px;
+       padding:  0;
+    }
+   body
+    {
+      margin:      0px auto;                   /* to center*/
+      width:       100%;
+      max-width:   1000px;
+      min-width:   800px;
+      height:      400px;
+      background-color: rgb(180, 180, 180);
+    }
+  header
+    {
+      height:          100px;
+      width:           100%;
+      background-color: rgb(100, 150, 150);
+    }
+  footer
+    {
+      height:          100px;
+      width:           100%;
+      background-color: rgb(255, 250, 250);
+      clear:           left;                   /* reqd. */
+    }
+  section
+    {
+      width:       70%;
+      height:      100%;
+      float:       left;
+      background-color: rgb(167, 10, 150);     /* optional */
+    }
+  aside
+    {
+      width:       30%;
+      height:      100%;
+      float:       left;
+      background-color: rgb(100, 150, 50);     /* optional */
+    }
+  section2
+    {
+      width:       100%;
+      height:      125px;
+      float:       left;
+      background-color: rgb(200, 210, 150);    /* optional */
+    }
+  aside2
+    {
+      width:       30%;
+      height:      100%;
+      float:       left;
+      background-color: rgb(210, 150, 50);     /* optional */
+    }
+</style>
+
+
+(JAKE LORAH)
+      

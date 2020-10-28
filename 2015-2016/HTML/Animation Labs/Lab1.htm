@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+   {
+     margin:  0px;
+     padding: 0px;
+   }
+ canvas
+   {
+    background-color: red;
+   }
+  </style>
+ </head>
+<body bgcolor=yellow>
+ <canvas id="ex1" width = "300" height = "400"></canvas>
+ <script>
+  var x  = 0;
+  var y  = 0;
+  var s  = 5;
+  animate();
+
+  function animate()
+   {
+    r=   window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+         window.msRequestAnimationFrame ||
+         window.oRequestAnimationFrame;
+    r(animate);
+  x++;
+
+  if (x > 300)
+    {
+      x=0;
+      y=Math.floor((Math.random()*375)+1);
+    }
+   draw(x,y);
+  }
+ function draw(x,y)
+  {
+    var canvas = document.getElementById("ex1");
+    var context = canvas.getContext("2d");
+    context.clearRect(0,0,300,400);
+    context.fillStyle = "#ff55ff";
+      context.fillRect(x,y,25,25);
+  }
+ </script>
+</body>
+</html>
+<br><br>(Jake Lorah)
+

@@ -1,0 +1,48 @@
+*,html
+  {
+    margin:	0px 0px 0px 0px;
+    padding:	0;
+  }
+body
+  {
+   margin:	0px auto;
+   width:	100%;
+   max-width:	980px;
+   min-width:	250px;
+   height:	500px;
+   font-family:	Verdana, Geneva, sans-serif;
+}
+header
+  {
+   width:             100%;
+   text-align:        center;
+   background-color:  rgb(155, 200, 165);
+   height:            10%;
+}
+section
+{
+    width:            70%;
+    float:            left;
+    background-color: rgb(140, 200, 78);
+    height:           100%;
+}
+aside
+{
+   width:                   30%;
+   float:                   left;
+   background-color:        rgb(67, 244, 99);
+   height:                  100%;
+}
+footer
+{
+   clear:              left;
+   width:              100%;
+   text-align:         center;
+   margin-top:         0px;
+   background-color:   rgb(34, 200, 247);
+   height:             50px;
+}
+
+
+
+

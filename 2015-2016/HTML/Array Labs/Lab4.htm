@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ Jake Lorah
+  <br>
+ </head>
+  <body>
+   <script>
+    var a1 = new Array(1000);
+    for (x=0; x<=999; x++)
+     {
+       a1[x]=0;
+     }
+    for (x=0; x<=999; x++)
+     {
+      document.write (a1[x]+" ");
+     }
+    for (x=0; x<=999; x++)
+     {
+     r=Math.floor((Math.random()*6)+1);
+       a1[x]=r
+     }
+      document.write("<br>")
+     var sum=0;
+     for (x=0; x<=999; x++)
+     {
+      document.write(a1[x]+" ");
+     }
+      document.write("<br>")
+    for (x=0; x<=999; x++)
+     {
+     }
+    for(o = 0; o <= 9; o++)
+     {
+      for(i = 0; i <= 8; i++)
+       {
+        if (a1[i + 1] < a1[i])
+          {
+            z          =a1[i];
+            a1[i]      =a1[i + 1];
+            a1[i + 1]  = z;
+          }
+       }
+     }
+      for (x=0; x<=9; x++)
+     {
+      document.write (a1[x]+" ");
+     }
+
+
+   </script>
+  </body>
+</html>

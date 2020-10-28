@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor=yellow>
+   Future Value of Money :
+  <br>
+  Present Value : <input  id = "pv"  type = "number">
+  <br>
+  Interest Rate : <input  id = "rt"  type = "number">
+  <br>
+  Number of Years : <input  id = "pd"  type = "number">
+  <button type = "button" onClick = "f1()">Submit</button>
+  <script>
+   function f1()
+      {
+        var x;
+        var y;
+        var z;
+        var a;
+        var b;
+        var c;
+        var d;
+        x=document.getElementById("pv").value;
+        y=document.getElementById("rt").value;
+        z=document.getElementById("pd").value;
+        a=parseInt(x);
+        b=parseInt(y);
+        c=parseInt(z);
+        d=a*(Math.pow(1+(b/100),c));
+        document.write("FV="+d);
+      }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+ <head>
+  <title>button  --  pull-down</title>
+
+ </head>
+ <body bgcolor="#4983c6">
+       <form name = "c1">
+               <select name = "c2" size = "1">
+                       <option selected value = "http://www.usatoday.com">usa today
+
+                               </option>
+                       <option value          ="http://www.nypost.com">ny post
+                              
+                               </option>
+                       <option value          ="http://www.musicradio77.com">wabc
+ 
+                               </option>
+                       <option value          ="http://www.foxnews.com">fox
+                               
+                               </option>
+               </select>
+               <input type = "button"
+                      value = "GO TO SITE"
+                      onClick="location=document.c1.c2.options
+                              [document.c1.c2.selectedIndex].value">
+      </form>
+
+ </body>
+</html>

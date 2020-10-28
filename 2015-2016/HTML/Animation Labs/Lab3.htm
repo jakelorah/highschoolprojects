@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+   canvas
+    {
+     background-color: darkgreen;
+     margin:      0px;
+     padding:      0px;
+    }
+  </style>
+ </head>
+
+ <body bgcolor=orange>
+  <p id="text">1</p>
+  <input type="button" value="+" id="btnAdd">
+  <input type="button" value="-"id="btnSub">
+
+  <canvas id="ex1" width = "300" height = "300"></canvas>
+
+  <script>
+   var x  =0;
+   var y  =0;
+   var speed = 10;
+   //Will be used to know if we need to add or subtract to the speed var
+   var isRight = true;
+
+
+   document.getElementById('text').innerText = speed;
+
+   document.getElementById('btnAdd').addEventListener('click', function (event)
+    {
+     if (isRight)
+       {
+         speed++;
+       }
+     else
+       {
+         speed--;
+       }
+     document.getElementById('text').innerText = speed;
+    });
+     document.getElementById('btnSub').addEventListener('click', function (event)
+        {
+         if (isRight)
+           {
+            speed--;
+           }
+         else
+           {
+            speed++;
+           }
+          document.getElementById('text').innerText = speed;
+        });
+
+     function animate()
+      {
+        r= window.mozRequestAnimationFrame ||
+           window.webkitRequestAnimationFrame ||
+           window.msRequestAnimationFrame ||
+           window.oRequestAnimationFrame;
+        r(animate);
+        x+= speed;
+        if(x <= 0 || x >= 275)
+         {
+           speed = -speed;
+           //We change the bool because the square is changing direction,
+           // if he was going right, the bool will become false,
+           // if he was going left, the ool will become true.
+           isRight = !isRight;
+          }
+         document.getElementById('text').innerText = speed;
+         draw();
+        }
+
+     function draw()
+      {
+       var canvas = document.getElementById("ex1");
+       var context = canvas.getContext("2d");
+       context.clearRect(0,0,300,300);
+       context.fillStyle = "#ff00ff";
+       context.fillRect(x,y,25,25);
+      }
+     animate();
+    </script>
+   </body>
+  </html>
+
+
+
+
+
+
+
+

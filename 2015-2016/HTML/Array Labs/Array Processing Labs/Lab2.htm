@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ Jake Lorah
+  <br>
+ </head>
+  <script>
+    var a1 = new Array(10);
+    var b1 = new Array(10);
+    var c1 = new Array(20);
+    for(x =0; x <= 9; x++)
+     {
+      a1[x] = x + 1;
+     }
+    for(x = 0;x <= 9; x++)
+     {
+      b1[x] = x + 20;
+     }
+    for(x = 0;x <= 9; x++)
+     {
+       document.write(a1[x] + " ");
+     }
+    for(x = 0;x <= 9; x++)
+     {
+       document.write(b1[x] + " ");
+     }
+    for(x = 0;x <= 9; x++)
+     {
+      c1[x] = a1[x];
+     }
+    for(x = 10;x <= 19; x++)
+     {
+      c1[x] = b1[x - 10];
+     }
+    document.write("<br>");
+    for(x = 0;x <= 19; x++)
+     {
+      document.write(c1[x] + " ");
+     }
+
+   </script>
+  </body>
+ </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  Jake Lorah
+  <br>
+  <script>
+   var a1 = new Array(10);
+   var b1 = new Array(10);
+   for(x = 0; x <= 9; x++)
+    {
+      a1[x] = 0;
+      b1[x] = 0;
+    }
+   document.write("a1 = ");
+   for(x = 0; x <= 9; x++)
+    {
+     document.write(a1[x] + " ");
+    }
+   document.write("<br>");
+   document.write("b1 = ")
+   for(x = 0; x <= 9; x++)
+    {
+     document.write(b1[x] + " ");
+    }
+   document.write("<br>")
+   for(x = 0; x <= 9; x++)
+    {
+      a1[x] = x + 1;
+    }
+   document.write("a1 = ");
+   for(x = 0; x <= 9; x++)
+    {
+     document.write(a1[x] + " ");
+    }
+   document.write("<br>");
+   for(x = 0; x <= 9; x++)
+    {
+      b1[x] = a1[x];
+    }
+   document.write("b1 = ");
+   for(x = 0; x <= 9; x++)
+    {
+      document.write(b1[x] + " ");
+    }
+   document.write("<br>");
+  </script>
+ </body>
+</html>
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <script src="fv1.js" type="text/javascript">
+     </script>
+ </head>
+ <body bgcolor=cyan>
+     Future Value of Money:
+     <br>
+     Present Value : <input  id = "pv" type = "number">
+     <br>
+     Interest rate : <input  id = "rt" type = "number">
+     <br>
+     Number of Years : <input id = "pd" type = "number">
+     <button type = "button" onClick = "go()">Submit</button>
+     <script type="text/javascript">
+       function go()
+         {
+             varx,y,z,a,b,c,d;
+             x=document.getElementById("pv").value;
+             y=document.getElementById("rt").value;
+             z=document.getElementById("pd").value;
+             a=parseInt(x);
+             b=parseInt(y);
+             c=parseInt(z);
+             f1(a,b,c);
+         }
+      </script>
+  </body>
+</html>
+
+
+function f1(a,b,c)                    fv1.js
+  {
+     d=a*(Math.pow(1+(b/100),c));
+     document.write("FV="+d);
+  }
+       
