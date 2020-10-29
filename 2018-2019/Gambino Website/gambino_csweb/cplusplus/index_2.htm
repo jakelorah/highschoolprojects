@@ -1,0 +1,455 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./1dimarray1_files/filelist.xml">
+<link rel=Edit-Time-Data href="./1dimarray1_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Diego Mina - CIS - 112 - Problem 1</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>d204-student-2</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Dick Galarza</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>251</o:TotalTime>
+  <o:LastPrinted>2001-01-30T15:58:00Z</o:LastPrinted>
+  <o:Created>2001-03-20T15:48:00Z</o:Created>
+  <o:LastSaved>2001-03-20T15:48:00Z</o:LastSaved>
+  <o:Pages>18</o:Pages>
+  <o:Words>291</o:Words>
+  <o:Characters>1661</o:Characters>
+  <o:Company>PCTI</o:Company>
+  <o:Lines>13</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>2039</o:CharactersWithSpaces>
+  <o:Version>9.3821</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>75</w:Zoom>
+  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>2</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:"Lucida Sans Unicode";
+	panose-1:2 11 6 2 3 5 4 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147476737 14699 0 0 63 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Lucida Sans Unicode";
+	mso-fareast-font-family:"Times New Roman";
+	color:red;}
+@page Section1
+	{size:8.7in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1051">
+  <o:colormenu v:ext="edit" strokecolor="red"/>
+ </o:shapedefaults></xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>//<span
+style="mso-spacerun: yes">                                                    
+</span>Diego Mina<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>//<span
+style="mso-spacerun: yes">                                                    
+</span>Computer Science II<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>//<span
+style="mso-spacerun: yes">                                                    
+</span>Date: 9/2/99<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>//<span
+style="mso-spacerun: yes">                                             </span><span
+style="mso-spacerun: yes">        </span>CIS-112<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>//<span
+style="mso-spacerun: yes">                                                    
+</span>problem # 1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:#339966'>#include
+&lt;iostream.h&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:#339966'>#include
+&lt;fstream.h&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:#339966'>#include
+&lt;conio.h&gt;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'>const int
+size=5;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'>class array1<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>public:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>array1() {}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>void fillit(int
+arr[],int size);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>void printit(int
+arr[],int size);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>void min (int
+arr[],int size);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>private:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>};<o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1028" style='position:absolute;
+ z-index:1' from="-.45pt,6.95pt" to="575.55pt,6.95pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:relative;z-index:0;left:-2px;top:8px;
+width:771px;height:11px'><img width=771 height=3
+src="./1dimarray1_files/image001.gif" v:shapes="_x0000_s1028"></span><![endif]><span
+style='font-family:"Lucida Sans Unicode";color:red'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText>PRE:<span style="mso-spacerun: yes">  </span>Integer
+variables arr[], and size, are passed into the function.</p>
+
+<p class=MsoBodyText><br>
+POST:<span style="mso-spacerun: yes">  </span>The program calls the file,
+“dm.dat” to fill it with data.</p>
+
+<p class=MsoBodyText><!--[if gte vml 1]><v:line id="_x0000_s1029" style='position:absolute;
+ z-index:2' from="-.45pt,9.2pt" to="575.55pt,9.2pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:relative;z-index:1;left:-2px;top:11px;
+width:771px;height:14px'><img width=771 height=3
+src="./1dimarray1_files/image002.gif" v:shapes="_x0000_s1029"></span><![endif]><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'>void
+array1::fillit(int arr[],int size)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>ifstream
+infile(&quot;c:\\bc45\\bin\\pmshop\\cpp\\top.dat&quot;, ios::in);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>int i;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>i=0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>cout &lt;&lt; <span
+style='color:blue'>&quot; Diego Mina\n\n&quot;;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>cout &lt;&lt; <span
+style='color:blue'>&quot; The received values: \n&quot;;</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>while(i &lt; size)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span>infile
+&gt;&gt; arr[i];<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span>i=i++;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1031" style='position:absolute;
+ z-index:3' from="-.45pt,3.2pt" to="557.55pt,3.2pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:relative;z-index:2;left:-2px;top:3px;
+width:747px;height:6px'><img width=747 height=3
+src="./1dimarray1_files/image003.gif" v:shapes="_x0000_s1031"></span><![endif]><span
+style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>PRE:<span
+style="mso-spacerun: yes">  </span>Integer variables arr[], and size are passed
+into the function.<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>POST:<span
+style="mso-spacerun: yes">  </span>Checks for the minimum value and prints it
+out.<o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1032" style='position:absolute;
+ z-index:4' from="-.45pt,9.2pt" to="557.55pt,9.2pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:relative;z-index:3;left:-2px;top:11px;
+width:747px;height:14px'><img width=747 height=3
+src="./1dimarray1_files/image004.gif" v:shapes="_x0000_s1032"></span><![endif]><span
+style='font-family:"Lucida Sans Unicode";color:red'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'>void
+array1::min(int arr[],int size)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>int i=0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>int m;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>m=arr[0];<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>while(i &lt; size)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span>if(arr[i]
+&lt; m)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span><span
+style="mso-spacerun: yes">  </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:5'>                                                </span><span
+style="mso-spacerun: yes">  </span>m = arr[i];<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span><span
+style="mso-spacerun: yes">  </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span>i=i+1;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>cout &lt;&lt; <span
+style='color:blue'>&quot; \n\n The minimum value is: &quot;</span> &lt;&lt; m;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1036" style='position:absolute;
+ z-index:5;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="-.45pt,12.25pt" to="557.55pt,12.25pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:relative;z-index:4;left:-2px;top:15px;
+width:747px;height:18px'><img width=747 height=3
+src="./1dimarray1_files/image005.gif" v:shapes="_x0000_s1036"></span><![endif]><span
+style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<p class=MsoBodyText>PRE:<span style="mso-spacerun: yes">  </span>Integer array
+variables, “arr[]” and integer “size”.</p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:red'>POST:<span
+style="mso-spacerun: yes">  </span>Prints out the numbers held in the .dat
+file, onto the screen.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1040" style='position:absolute;
+ z-index:6;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="-.45pt,.2pt" to="557.55pt,.2pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:relative;z-index:5'><span style='position:
+absolute;left:-2px;top:-1px;width:747px;height:3px'><img width=747 height=3
+src="./1dimarray1_files/image006.gif" v:shapes="_x0000_s1040"></span></span><![endif]><span
+style='font-family:"Lucida Sans Unicode"'>void array1::printit(int arr[],int
+size)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>int i;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>i=0;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>cout &lt;&lt; <span
+style='color:blue'>&quot;\n The numbers are: &quot;</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>while(i &lt; size)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span>cout
+&lt;&lt; arr[i] &lt;&lt; <span style='color:blue'>&quot; &quot;</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:4'>                                      </span>i=i++;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:3'>                             </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>getch();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><!--[if gte vml 1]><v:line id="_x0000_s1047" style='position:absolute;
+ z-index:8;mso-position-horizontal:absolute;mso-position-vertical:absolute'
+ from="-.95pt,83.25pt" to="563.05pt,83.25pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:absolute;z-index:7;margin-left:-2px;
+margin-top:110px;width:755px;height:3px'><img width=755 height=3
+src="./1dimarray1_files/image007.gif" v:shapes="_x0000_s1047"></span><![endif]><!--[if gte vml 1]><v:line
+ id="_x0000_s1043" style='position:absolute;z-index:7;
+ mso-position-horizontal:absolute;mso-position-horizontal-relative:text;
+ mso-position-vertical:absolute;mso-position-vertical-relative:text' from="-.95pt,11.25pt"
+ to="557.05pt,11.25pt" strokecolor="red"/><![endif]--><![if !vml]><span
+style='mso-ignore:vglayout;position:absolute;z-index:6;margin-left:-2px;
+margin-top:14px;width:747px;height:3px'><img width=747 height=3
+src="./1dimarray1_files/image008.gif" v:shapes="_x0000_s1043"></span><![endif]><span
+style='font-family:"Lucida Sans Unicode";color:red'><br>
+PRE:</span><span style='font-family:"Lucida Sans Unicode"'><span
+style="mso-spacerun: yes">  </span><span style='color:red'>Calls the functions
+inside the program.<br>
+<br>
+POST:</span><span style="mso-spacerun: yes">  </span><span style='color:red'>The
+functions are run and results in the output.<br>
+</span><br>
+<br>
+void main()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>const int size=<span
+style='color:blue'>5</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>int arr[5];<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>array1 a;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>a.fillit(arr,size);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:2'>                   </span>a.printit(arr,size);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style="mso-spacerun: yes">      </span>a.min(arr,size);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><span
+style='mso-tab-count:1'>          </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:green'><span
+style="mso-spacerun: yes">                 </span>***** OUTPUT *****<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><span
+style="mso-spacerun: yes"> </span>Diego Mina<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><span
+style="mso-spacerun: yes"> </span>The received values:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><span
+style="mso-spacerun: yes"> </span>The numbers are: 90 23 -36 47 53<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode";color:blue'><span
+style="mso-spacerun: yes"> </span>The minimum value is: -36</span><span
+style='font-family:"Lucida Sans Unicode"'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-family:"Lucida Sans Unicode"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

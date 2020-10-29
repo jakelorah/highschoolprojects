@@ -1,0 +1,568 @@
+<HTML>
+<HEAD><TITLE>Gambino's Computer Science Site</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var bV=parseInt(navigator.appVersion);
+NS4=(document.layers) ? true : false;
+IE4=((document.all)&&(bV>=4))?true:false;
+ver4 = (NS4 || IE4) ? true : false;
+if (document.images) {
+arImLoad = new Array (
+"../art/b_left_over",
+"../art/b_left_down",
+"../art/b_right_over",
+"../art/b_right_down",
+"triUp");
+arImList = new Array ();
+for (counter in arImLoad) {
+arImList[counter] = new Image();
+arImList[counter].src = arImLoad[counter] + ".gif";
+}}
+function navOver(imName,dir,over,bot) {
+if (!document.images) {return};
+whichIm = (NS4 && bot) ? document.elFooter.document.images[imName] : document.images[imName];
+if (over) {whichIm.src = "../art/b_" + dir + "_over.gif"}
+else {whichIm.src = "../art/b_" + dir + ".gif"}
+}
+function navPress(imName,dir,press,bot) {
+whichIm = (NS4 && bot) ? document.elFooter.document.images[imName] : document.images[imName];
+if (press) {whichIm.src = "../art/b_" + dir + "_down.gif"}
+else {whichIm.src = "../art/b_" + dir + ".gif"}
+}
+function expandIt(){return}
+function expandAll(){return}
+//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+isExpanded = false;
+
+function getIndex(el) {
+	ind = null;
+	for (i=0; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		if (whichEl.id == el) {
+			ind = i;
+			break;
+		}
+	}
+	return ind;
+}
+
+function arrange() {
+	nextY = document.layers[firstInd].pageY + document.layers[firstInd].document.height;
+	for (i=firstInd+1; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		if (whichEl.visibility != "hide") {
+			whichEl.pageY = nextY;
+			nextY += whichEl.document.height;
+		}
+	}
+}
+
+function initIt(){
+	if (NS4) {
+		for (i=0; i<document.layers.length; i++) {
+			whichEl = document.layers[i];
+			if (whichEl.id.indexOf("Child") != -1) whichEl.visibility = "hide";
+		}
+		arrange();
+	}
+	else {
+		tempColl = document.all.tags("DIV");
+		for (i=0; i<tempColl.length; i++) {
+			if (tempColl(i).className == "child") tempColl(i).style.display = "none";
+		}
+	}
+}
+
+function expandIt(el) {
+	if (!ver4) return;
+	if (IE4) {expandIE(el)} else {expandNS(el)}
+}
+
+function expandIE(el) { 
+	whichEl = eval(el + "Child");
+	whichIm = event.srcElement;
+	if (whichEl.style.display == "none") {
+		whichEl.style.display = "block";
+		whichIm.src = "triUp.gif";		
+	}
+	else {
+		whichEl.style.display = "none";
+		whichIm.src = "triDown.gif";
+	}
+}
+
+function expandNS(el) {
+	whichEl = eval("document." + el + "Child");
+	whichIm = eval("document." + el + "Parent.document.images['imEx']");
+	if (whichEl.visibility == "hide") {
+		whichEl.visibility = "show";
+		whichIm.src = "triUp.gif";
+	}
+	else {
+		whichEl.visibility = "hide";
+		whichIm.src = "triDown.gif";
+	}
+	arrange();
+}
+
+function showAll() {
+	for (i=firstInd; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		whichEl.visibility = "show";
+	}
+}
+
+function expandAll(isBot) {
+	newSrc = (isExpanded) ? "triDown.gif" : "triUp.gif";
+
+	if (NS4) {
+        document.images["imEx"].src = newSrc;
+		for (i=firstInd; i<document.layers.length; i++) {
+			whichEl = document.layers[i];
+			if (whichEl.id.indexOf("Parent") != -1) {
+				whichEl.document.images["imEx"].src = newSrc;
+			}
+			if (whichEl.id.indexOf("Child") != -1) {
+				whichEl.visibility = (isExpanded) ? "hide" : "show";
+			}
+		}
+
+		arrange();
+		if (isBot && isExpanded) scrollTo(0,document.layers[firstInd].pageY);
+	}
+	else {
+		divColl = document.all.tags("DIV");
+		for (i=0; i<divColl.length; i++) {
+			if (divColl(i).className == "child") {
+				divColl(i).style.display = (isExpanded) ? "none" : "block";
+			}
+		}
+		imColl = document.images.item("imEx");
+		for (i=0; i<imColl.length; i++) {
+			imColl(i).src = newSrc;
+		}
+	}
+
+	isExpanded = !isExpanded;
+}
+
+with (document) {
+	write("<STYLE TYPE='text/css'>");
+	if (NS4) {
+		write(".parent {position:absolute; visibility:hidden}");
+		write(".child {position:absolute; visibility:hidden}");
+		write(".regular {position:absolute; visibility:hidden}")
+	}
+	else {
+		write(".child {display:none}")
+	}
+	write("</STYLE>");
+}
+
+onload = initIt;
+//-->
+</SCRIPT>
+
+</HEAD>
+
+<!--=== BODY ===-->
+<body background="sciMENUBG.jpg" link = "blue" vlink ="blue">
+<a name = "index">
+<center><h2><b>C++</b></h2></center>
+
+
+
+
+
+
+
+
+<DIV ALIGN="left">
+<TABLE BORDER="0" WIDTH="98%" CELLSPACING="1" height="1">
+<TR>
+<DIV ALIGN="left">
+
+<br>
+<!---------- begin OUTLINE ----------->
+
+
+<P><A 
+HREF="#" onClick="expandAll(false); return false"></A>
+<FONT COLOR="#000066" FACE="Arial,Helvetica" SIZE=5><B></B></FONT>
+</P>
+<BLOCKQUOTE>
+<DIV ID="elOneParent" CLASS=parent><H4><A name="1dimarray" 
+HREF="/gambino_csweb/cplusplus/index_2.htm" ></A>
+<FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1_Dimensional_Arrays.htm">1 Dimensional Arrays</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elOneChild" CLASS=child >
+	<P><A NAME="HTML4"
+	HREF="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm" target="_blank">Click to view source</A>
+	<BR>This C++ program will return the smallest value 
+	<BR>stored in an array of integers.
+	</P>
+	
+	<P><A 
+	HREF="1dimarrays/1dimarray2.htm" target="_blank">Click to view source</A>
+	<BR>This C++ program will return the largest value 
+	<BR>stored in an array of integers.
+	</P>
+	
+	<P><A 
+	HREF="1dimarrays/1dimarray3.htm" target="_blank">Click to view source</A>
+	<BR>This C++ program will return the position of the 
+	<BR>smallest value stored in an array of integers.
+	</P>
+
+	<P><A
+	HREF="1dimarrays/1dimarray4.htm" target="_blank">Click to view source</A>
+	<BR>This C++ program will return the position of the 
+	<BR>largest value stored in an array of integers.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray5.htm" target="_blank">Click to view source</A>
+	<BR>This C++ program will return the range of values 
+	<BR>stored in an array of integers.
+	</P>
+	
+	<P><A 
+	HREF="1dimarrays/1dimarray6.htm" target="_blank">Click to view source</A>
+	<BR>This C++ program will return TRUE if the values 
+	<BR>stored are in ascending order and FALSE otherwise.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray7.htm" target="_blank">Click to view source</A>
+	<BR>This program will insert a value into an array of 
+	<BR>integers at a specified position.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray8.htm" target="_blank">Click to view source</A>
+	<BR>This program will remove a value from an array of 
+	<BR>integers at a specified position in the array and insert a -1.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray9.htm" target="_blank">Click to view source</A>
+	<BR>This program will perform a linear search of a sequence 
+	<BR>of integers stored in an array for a given value.  
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray10.htm" target="_blank">Click to view source</A>
+	<BR>This program will find the partial sum of first 3 elements, 
+	<BR>elements from 3 to 6, and all of the elements stored in array.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray11.htm" target="_blank">Click to view source</A>
+	<BR>This program will swap first and last element in an array.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray12.htm" target="_blank">Click to view source</A>
+	<BR>This program will find the middle and swap the element 
+	<BR>to the left of the middle with the element to the right of the middle.
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray13.htm" target="_blank">Click to view source</A>
+	<BR>This program will find the middle and list the elements
+	<BR>to the right and to the left of the middle in reverse order
+	<BR>and find the middle number. 
+	</P>
+
+	<P><A 
+	HREF="1dimarrays/1dimarray14.htm" target="_blank">Click to view source</A>
+	<BR>This program will find the average of 5 test scores stored in array.
+	</P>
+</DIV>
+<DIV ID="elTwoParent" CLASS=parent>
+	<H4><A name = "sorts"
+HREF="#" onClick="expandIt('elTwo'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Sorts</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elTwoChild" CLASS=child>
+	<P><A NAME="NSdocs"
+	HREF="sorts/bubblesort.htm" target="_blank">Click to view source</A>
+	<BR>Bubble Sort
+	</P>
+
+	<P><A
+	HREF="sorts/mergesort.txt" target="_blank">Click to view source</A>
+	<BR>Merge Sort
+	</P>
+
+	<P><A
+	HREF="sorts/quicksort.htm" target="_blank">Click to view source</A>
+	<BR>Quick Sort - Algorithm based on Divide and Conquer approach
+	</P>
+
+	<P><A
+	HREF="sorts/selectionsort.txt" target="_blank">Click to view source</A>
+	<BR>Selection Sort
+	</P>
+
+	<P><A
+	HREF="sorts/insertionsort.txt" target="_blank">Click to view source</A>
+	<BR>Insertion Sort
+	</P>
+</DIV>
+<DIV ID="elThreeParent" CLASS=parent>
+	<H4><A name="queues"
+HREF="#" onClick="expandIt('elThree'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Queues</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elThreeChild" CLASS=child>
+
+	
+</DIV>
+
+<DIV ID="elFourParent" CLASS=parent>
+<H4><A name = "trees"
+HREF="#" onClick="expandIt('elFour'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Trees</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elFourChild" CLASS=child>
+
+
+</DIV>
+<DIV ID="elFiveParent" CLASS=parent>
+<H4><A name = "searches"
+HREF="#" onClick="expandIt('elFive'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Searches</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+
+<DIV ID="elFiveChild" CLASS=child>
+
+	<P><A HREF="searches/binary.html" target="_blank">Click to view source</A>
+	<BR>This program will search through an array using the 'Binary Search' Method. 
+	</P>
+
+	<P><A HREF="searches/linear.txt" target="_blank">Click to view source</A>
+	<BR>This program will perform a Linear Search for 10 elements and respond 
+	<BR>if the element is found or not. 
+	</P>
+
+</DIV>
+<DIV ID="elSixParent" CLASS=parent>
+<H4><A name = "ood"
+HREF="#" onClick="expandIt('elSix'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Object Oriented Design</a></FONT>&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elSixChild" CLASS=child>
+
+	<P><A HREF="ood/array.html" target="_blank">Click to view source</A>
+	<BR>Example of splitting a program into four parts; a Header, a Driver, an Implementation, and an output. 
+	</P>
+
+	<P><A HREF="ood/time.html" target="_blank">Click to view source</A>
+	<BR>Example of splitting a program into four parts; a Header, a Driver, an Implementation, and an output. 
+	</P>
+
+	<P><A HREF="ood/rect.html" target="_blank">Click to view source</A>
+	<BR>Example of splitting a program into four parts; a Header, a Driver, an Implementation, and an output. 
+	</P>
+</DIV>
+
+
+
+<DIV ID="elSevenParent" CLASS=parent><H4><A name = "recursion"
+HREF="#" onClick="expandIt('elSeven'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Recursion</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elSevenChild" CLASS=child>
+
+	<P><A HREF="recursion/recu_1.html" target="_blank">Click to view source</A>
+	<BR>This program will return the characters entered by user in a reverse order.</p>
+
+	<P><A HREF="recursion/recu_2a.html" target="_blank">Click to view source</A>
+	<BR>This program will print the integers in reverse order.
+	<BR>Example
+	<BR>If user enters (123) the computer output is (321)</p>
+
+	<P><A HREF="recursion/recu_2b.html" target="_blank">Click to view source</A>
+	<BR>This program will find the sum of 1/2 + 1/3 + 1/4 + ... 1/x</p>
+
+	<P><A HREF="recursion/recu_3.html" target="_blank">Click to view source</A>
+	<BR>This program will return the SUMUP of all the positive integers less or equal to the argument.</p>
+	
+	<P><A HREF="recursion/binary.txt" target="_blank">Click to view source</A>
+	<BR>This program will enter an integer and display its binary equivalent.</p>
+
+	<P><A HREF="recursion/hexidecimal.txt" target="_blank">Click to view source</A>
+	<BR>This program will enter an integer and display its hexidecimal equivalent.</p>
+	<P>
+	<BR>Fibonacci 
+	<Br>&nbsp;&nbsp;1. Recursion<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<A HREF="recursion/recu_2crecursion.html" target="_blank">Click to view source</A>
+	<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This program will return the Nth Fibonacci Number,where the Fibonacci numbers are
+	<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 5 8 13 21 34, etc., using recursion.<BR>
+	<BR>&nbsp;&nbsp;2. Iteration<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<A HREF="recursion/iter_2c.txt" target="_blank">Click to view source</A>	
+	<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This program will return the Nth Fibonacci Number,where the Fibonacci numbers are
+	<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 2 3 5 8 13 21 34, etc. , using iteration.</p>
+</DIV>
+
+<DIV ID="elEightParent" CLASS=parent><H4><A name = "selection"
+HREF="#" onClick="expandIt('elEight'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">If() Selections</a></FONT>&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elEightChild" CLASS=child>
+
+	<P><A HREF="ifselections/ifselection1.html" target="_blank">Click to view source</A>
+	<BR>This program will ask you to input a number, and 
+	<BR>the program will tell you if its positive, negative, or zero.</p>     
+
+	<P><A HREF="ifselections/ifselection2.html" target="_blank">Click to view source</A>
+	<BR>This program will convert a number grade of 0-100 to a letter grade.</p>   
+
+	<P><A HREF="ifselections/ifselection3.html" target="_blank">Click to view source</A>
+	<BR>This program wil ask you to enter two numbers. The program will then 
+	<BR>tell you which of the two numbers is larger or if they are both equal.</p>  
+
+	<P><A HREF="ifselections/ifselection4.html" target="_blank">Click to view source</A>
+	<BR>This program will tell you what activity is suitable for certain 
+	<BR>temperatures.</p>
+
+	<P><A HREF="ifselections/ifselection5.html" target="_blank">Click to view source</A>
+	<BR>This program will calculate the average cost of college tuition after you 
+	<BR>input in the program the number of credit and whether you are IN-State 
+	<BR>or Out-of-State</p>
+
+	<P><A HREF="ifselections/ifselection6.html" target="_blank">Click to view source</A>
+	<BR>This program will help you find out the letter grade based on your 
+	<BR>average grade (number) which you have earned in a class.</p> 
+</DIV>
+
+<DIV ID="elNineParent" CLASS=parent><H4><A name = "2dimarray"
+HREF="#" onClick="expandIt('elNine'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">2 Dimensional Arrays</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elNineChild" CLASS=child>
+
+	<P><A HREF="2dimarrays/2dimarray1.html" target="_blank">Click to view source</A>
+	<BR>This program prints the values stored in a 2-dimensional array and also 
+	<BR>prints it in reverse order.
+
+	<P><A HREF="2dimarrays/2dimarray2.html" target="_blank">Click to view source</A>
+	<BR>This program will ask the user to enter an integer then place that 
+	<BR>integer at the beginning of a already filled two dimesional array and 
+	<BR>then shift the rest of the information. So the information entered would  
+	<BR>be in the first spot, the info from the first to the second, the second to 
+	<BR>the third, and so on until the and the last of the information is deleted .
+</DIV>
+
+<DIV ID="elTenParent" CLASS=parent><H4><A name = "linkedlist"
+HREF="#" onClick="expandIt('elTen'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Linked List</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elTenChild" CLASS=child>
+
+	<P><A HREF="linkedlist/linkedlist1.html" target="_blank">Click to view source</A>
+	<BR>This program will ask the user to enter a name that will be taken in as a 
+	<BR>string using the getstring function given by the teacher and place it in a 
+	<BR>linked list. Then create a function that will allow you to search the 
+	<BR>entire linked list this function will call another function that will return a 
+	<BR>pointer and use that pointer to either display a found or not found  
+	<BR>message. 
+</DIV>
+
+
+<DIV ID="elElevenParent" CLASS=parent><H4><A name = "stacks"
+HREF="#" onClick="expandIt('elEleven'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Stacks</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elElevenChild" CLASS=child>
+
+
+</DIV>
+
+<DIV ID="elTwelveParent" CLASS=parent><H4><A name = "textfiles"
+HREF="#" onClick="expandIt('elTwelve'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Text Files</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elTwelveChild" CLASS=child>
+
+
+</DIV>
+
+<DIV ID="elThirteenParent" CLASS=parent><H4><A name = "imageprocess"
+HREF="#" onClick="expandIt('elThirteen'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Image processing</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elThirteenChild" CLASS=child>
+
+	<P><A HREF="imageprocess/index.html" target="_blank">Click Here</A>
+	<BR>This link will take to another page containing the programs.
+
+</DIV>
+
+<DIV ID="elFourteenParent" CLASS=parent><H4><A name="hashing"
+HREF="#" onClick="expandIt('elFourteen'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Hashing</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+<DIV ID="elFourteenChild" CLASS=child>
+
+	<P><A HREF="hashing/hash-1.txt" target="_blank">Click Here</A>
+	<BR>This is a Hash Skeleton.
+
+	<P><A HREF="hashing/hash-2.txt" target="_blank">Click Here</A>
+	<BR>This C++ program takes as input the name of a city from New Jersey and covert it to an address. 
+
+	<P><A HREF="hashing/hash-3.txt" target="_blank">Click Here</A>
+	<BR>The Hash Funcion convert the key into an address and store it in an array of structures.Uses a 
+	<BR>menu with the following options: Add a key, list All, and Exit.
+
+	<P><A HREF="hashing/hash-4.txt" target="_blank">Click Here</A>
+	<BR>The Hash Funcion convert the key into an address and store it in an array of structures.Uses a 
+	<BR>menu with the following options: Add a key, list All, and Exit.
+
+	<P><A HREF="hashing/hash-5.txt" target="_blank">Click Here</A>
+	<BR>A search function "Search()" Was added to this program. This function will call GetKey(),    
+	<BR>HashKey(), Found() and NotFound() functions. 
+
+	<P><A HREF="hashing/hash-6.txt" target="_blank">Click Here</A>
+	<BR>This C++ program allows you to enter four records in one key. 
+</DIV>
+
+<DIV ID="elFifthteenParent" CLASS=parent><H4><A name = "datastructure" 
+HREF="#" onClick="expandIt('elFifthteen'); return false"><FONT COLOR="blue"><a href="/gambino_csweb/cplusplus/1dimarrays/1dimarray1.htm">Data Structure</a></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="2"> </font></H4>
+</DIV>
+
+
+
+
+
+
+
+
+    </tr>
+</table>
+<!---------- end OUTLINE ----------->
+
+
+</SCRIPT>
+
+</BODY>
+</HTML>
