@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var daysofweek = new Date();
+var weekday = new Array(7);
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var day = weekday[daysofweek.getDay()];
+if (day == weekday[1]) {
+ alert("Today is Monday. I'm sorry.");
+} else if (day == weekday[2]) {
+ alert("Today is Tuesday");
+} else if (day == weekday[3]) {
+ alert("Today is Wednesday");
+} else if (day == weekday[4]) {
+ alert("Today is Thursday");
+} else if (day == weekday[5]) {
+ alert("Today is Friday, have a good weekend");
+} else if (day == weekday[6]) {
+ alert("Today is Saturday");
+} else if (day == weekday[1]) {
+ alert("Today is Sunday");
+}
+</script>
+ <script type="text/javascript">
+   function returnMonth() {
+   var month =  new Array   
+(
+"What command extracts the day of the week value from a date object variable named thisDate?<br>thisDate.getDay();", 
+
+"What day of the week value is returned for a date occuring on a Friday?<br>5", 
+
+"What command changes the thisDate variable to the fifth day of the month?<br>thisDate.setDate(5);",  
+
+"A function named showDate() has an optional parameter named thisDate. What expression tests whether the showDate() function was called with a value set for the thisDate parameter?<br>if (thisDate != null) ...", 
+
+"What command breaks out of a program loop?<br>break;", 
+
+"What command forces the script to go to the next iteration of the current program loop?<br>continue;", 
+
+
+
+
+
+
+"1.What command extracts the day of the week value from a date object variable named thisDate?<br>thisDate.getDay();<br>2.What day of the week value is returned for a date occuring on a Friday?<br>5<br> 3.What command changes the thisDate variable to the fifth day of the month?<br>thisDate.setDate(5);<br>  4.A function named showDate() has an optional parameter named thisDate. What expression tests whether the showDate() function was called with a value set for the thisDate parameter?<br>if (thisDate != null) ... <br> 5.What command breaks out of a program loop?<br>break;<br> 6.What command forces the script to go to the next iteration of the current program loop? <br>continue;");
+
+do{      
+var userInput = prompt("Please give a number 1-6 for a question and answer. Print 7 for all questions and answers. Print 0 to exit");
+}
+while (userInput < 0 || userInput > 7)
+       userInput = userInput-1
+      document.write("" + month[userInput]);
+    }
+
+
+switch(userInput){
+               case -1: window.close();
+               break;
+               }
+	document.write(userInput[x]);
+
+   </script>
+</head>
+<body onLoad="returnMonth()">
+</body>
+</htm

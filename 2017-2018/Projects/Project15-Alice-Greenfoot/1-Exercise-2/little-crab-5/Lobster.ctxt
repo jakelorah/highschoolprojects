@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ Do\ whatever\ lobsters\ do.\r\n
+comment1.params=
+comment1.target=void\ turnAtEdge()
+comment1.text=\r\n\ Check\ whether\ we\ are\ at\ the\ edge\ of\ the\ world.\ If\ we\ are,\ turn\ a\ bit.\r\n\ If\ not,\ do\ nothing.\r\n
+comment2.params=
+comment2.target=void\ randomTurn()
+comment2.text=\r\n\ Randomly\ decide\ to\ turn\ from\ the\ current\ direction,\ or\ not.\ If\ we\ turn\r\n\ turn\ a\ bit\ left\ or\ right\ by\ a\ random\ degree.\r\n
+comment3.params=
+comment3.target=void\ lookForWorm()
+comment3.text=\r\n\ Try\ to\ pinch\ a\ crab.\ That\ is\:\ check\ whether\ we\ have\ stumbled\ upon\ a\ crab.\r\n\ If\ we\ have,\ remove\ the\ crab\ from\ the\ game,\ and\ stop\ the\ program\ running.\r\n
+numComments=4

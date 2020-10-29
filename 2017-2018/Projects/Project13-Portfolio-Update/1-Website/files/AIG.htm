@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body>
+<body bgcolor="#b3e5fc">
+<center><img src="pic.jpg" alt="Smiley face" height="210" width="350"></center>
+<br>
+<br>
+<center><font size="6" color="#00acc1">AIG New Quote Assignment - Jake Lorah</font></center>
+<br>
+<br>
+<font size="5" color="#01579b">
+<script>
+
+var response;
+var question1 = prompt("Is your risk exposure High, Medium, or Low?");
+var question2 = prompt("Are there prior claims filed? Input Yes or No.");
+var question3 = prompt("Are you eligible for good student discount? Input yes or no.");
+var question4 = prompt("How many traffic tickets in the past 2 years?");
+var question5 = prompt("Are you eligible for vehicle financing?");
+var question6 = prompt("How many vehicles do you Own?");
+var premium = prompt("Please enter your premium");
+
+if(question1 == "high" || question1 == "High")
+  {
+   premium = premium*2;
+  }
+
+if(question1 == "medium" || question1 == "Medium")
+  {
+   premium = premium*1.5;
+  }
+
+if(question2 == "yes" || question2 == "Yes")
+{
+premium = premium*1.25;
+}
+
+if(question3 == "yes" || question3 == "Yes")
+{
+premium = premium/1.25;
+}
+
+if(question4 >= 1)
+{
+premium = premium;
+}
+
+if(question4 == "2")
+{
+premium = premium*1.5;
+} 
+
+if(question4 == "3")
+{
+premium = premium*1.5;
+}
+ 
+if(question4 == "5")
+{
+premium = premium*1.5;
+} 
+
+if(question4 == "5")
+{
+premium = premium*1.5;
+} 
+
+if(question4 == "6")
+{
+premium = premium*2;
+} 
+
+if(question4 == "7")
+{
+premium = premium*2;
+} 
+
+if(question4 == "8")
+{
+premium = premium*2;
+} 
+
+if(question4 == "9")
+{
+premium = premium*2;
+} 
+
+if(question4 == "10");
+{
+premium = premium*2;
+} 
+
+if(question5 == "yes" || question5 == "Yes")
+{
+premium = premium+1000;
+}
+
+if(question6 == "0")
+{
+premium = premium;
+}
+
+if(question6 > 0)
+{
+premium = premium*question6;
+}
+
+
+document.write("Your Premium is: " + premium);
+</script>
+</font>
+</body>
+</html>

@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spain</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-color: #faad81;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: white;
+	text-decoration:; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 960px;
+	background: #fffabc;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background-image: url("images/blurry1.png");
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the left instead of the right, simply float these columns the opposite direction (all left instead of all right) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 225px;
+	background: orange;
+	padding-bottom: 0px;
+}
+.content {
+	padding: 10px 0;
+	width: 750px;
+	float: center;
+	text-align: center;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	width: 160px;  /*this width makes the entire button clickable for IE6. If you don't need to support IE6, it can be removed. Calculate the proper width by subtracting the padding on this link from the width of your sidebar container. */
+	text-decoration: none;
+	background: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #ADB96E;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px;
+	background: #F8BA77;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	text-align: center;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+h1 {
+	color: #000;
+}
+.container .content h1 {
+	text-align: center;
+}
+.a {
+	font-weight: bold;
+}
+-->
+</style></head>
+
+<body bgcolor="#000000">
+
+<div class="container">
+   <div id="page">
+   <form id="searchForm" action="">
+
+      <div id="menu1" class="menu">
+         <a href="#">Home</a>
+      </div>
+      <div id="menu1List" class="menuList">
+         <ul>
+
+            <center><li><a href="index.html">Home</a></li></center>
+
+         </ul>
+      </div>
+
+      <div id="menu2" class="menu">
+         <a href="#">Official Language</a>
+      </div>
+      <div id="menu2List" class="menuList">
+         <ul>
+            <center><li><a href="language.html">Official Language</a></li>
+</center>
+         </ul>
+      </div>
+
+      <div id="menu3" class="menu">
+         <a href="#">Location</a>
+      </div>
+      <div id="menu3List" class="menuList">
+         <ul>
+            <center><li><a href="location.html">Location</a></li> </center>
+
+         </ul>
+      </div>
+
+      <div id="menu4" class="menu">
+         <a href="#">Food/Drinks</a>
+      </div>
+      <div id="menu4List" class="menuList">
+         <ul>
+            <center><li><a href="food.html">Food/Drinks</a></li> </center>
+
+         </ul> 
+      </div>
+
+      <div id="menu5" class="menu">
+         <a href="#">Clothing</a>
+      </div>
+      <div id="menu5List" class="menuList">
+         <ul>
+            <center><li><a href="clothing.html">Clothing</a></li> </center>
+
+         </ul>
+      </div>
+
+      <div id="menu6" class="menu">
+         <a href="#">More...</a>
+      </div>
+      <div id="menu6List" class="menuList">
+         <ul>
+            <center><li><a href="weather.html">Weather/Climate</a></li>  
+            <li><a href="holidays.html">Holidays</a></li>  
+            <li><a href="government.html">Government</a></li>  
+            <li><a href="culture.html">Culture</a></li>
+           <li><a href="hotel.html">Hotels</a></li>
+           <li><a href="sponsors.html">Sponsors</a></li></center>  
+         </ul> 
+      </div>
+ 
+
+
+   </form>
+   </div>
+  <div class="header"><img src="images/Logo.jpg" width="275" height="130" /></div>
+  <div class="sidebar1">
+    <img src="images/Menu.jpg" width="225" height="550" border="0" usemap="#Map" />
+    <map name="Map" id="Map">
+      <area shape="rect" coords="66,15,151,64" href="index.html" />
+      <area shape="rect" coords="13,76,209,118" href="language.html" />
+      <area shape="rect" coords="33,132,179,172" href="location.html" />
+      <area shape="rect" coords="35,191,182,225" href="food.html" />
+      <area shape="rect" coords="47,247,159,287" href="clothing.html" />
+      <area shape="rect" coords="14,302,206,340" href="weather.html" />
+      <area shape="rect" coords="6,358,220,397" href="holidays.html" />
+      <area shape="rect" coords="30,409,187,444" href="government.html" />
+      <area shape="rect" coords="43,458,170,497" href="culture.html" />
+      <area shape="rect" coords="58,509,156,544" href="hotel.html" />
+    </map>
+
+  <!-- end .sidebar1 --></div>
+  <div class="content">
+    <br><h1><!-- end .content -->Holidays &amp; Occasions</h1>
+    <p>&nbsp;</p>
+    <p>Americans will recognize some of Spain's national holidays.
+    <p>
+    <h2>New Year's Day</h2>
+    <p>&nbsp;</p>
+    <h2>Epiphany</h2>
+    <p>&nbsp;</p>
+    <h2>Easter Holidays</h2>
+    <p>&nbsp;</p>
+    <h2>Labor Day</h2>
+    <p>&nbsp;</p>
+    <h2>Assumption of Mary</h2>
+    <p>&nbsp;</p>
+    <h2>Hispanic Day</h2>
+    <h2>&nbsp;</h2>
+    <h2><img src="images/holiday1.jpg" width="654" height="280" /><br />
+      <br /><br /><br />                            
+    </h2>
+    <p class="a"><br />
+      <br />
+    <p>(http://traveltips.usatoday.com/holidays-celebrated-spain-22526.html)        
+    <p>&nbsp;</p>
+  </div>
+<style>
+/*
+   New Perspectives on JavaScript, 2nd Edition
+   Tutorial 4
+   Tutorial Case
+
+   Author: Jake Lorah  
+   Date: 2/7/18    
+   Filename: shblog.css
+
+   This file contains styles used in the holmes.htm file.
+
+*/
+
+*                   {padding: 0px; margin: 0px; line-height: 1.2}
+
+body                {background-color: #faad81; 
+                     font-family: 'Trebuchet MS', Arial, Verdana, sans-serif;
+                     font-size: 14px}
+
+#page               {position: absolute; top: -15px; center: 10px; width: 850px}
+
+a                   {text-decoration: none; color: black}
+p                   {margin: 15px 0px}
+ul                  {list-style-type: none}
+
+#logo               {position: absolute: top: 0px; left: 0px;
+                     width: 100%; height: 108px; background-color: black; z-index: 3}
+#logo img           {float: left}
+#logo label         {float: right; margin-top: 15px; margin-right: 10px}
+#logo input         {float: right; margin-top: 15px; background-color: ivory}
+
+.menu               {position:absolute; top: 110px; width: 123px; height: 35px; z-index: 3;
+                     border: 1px solid black; color: black; background-color: #E85C0D;
+                     text-align: center}
+.menu a             {display: block; width: 124px; height: 35px; color: black}
+.menu a:hover       {background-color: #F79E6C; color: black}
+
+#menu1, #menu1List  {left: 0px}
+#menu2, #menu2List  {left: 122px}
+#menu3, #menu3List  {left: 244px}
+#menu4, #menu4List  {left: 366px}
+#menu5, #menu5List  {left: 488px}
+#menu6, #menu6List  {left: 610px}
+
+.menuList           {position: absolute; top: 146px; width: 122px; z-index: 2;
+                     background-color: ivory; color: black; border: 0px solid black;  display: none}
+
+.menuList li        {margin: 5px}
+.menuList a         {display: block; width: 120px}
+.menuList a:hover   {background-color: ; color: black;}
+
+#linkList           {position: absolute; top: 120px; left: 5px; width: 175px;
+                     border-right: 1px solid black}
+#linkList li        {line-height: 1.5}
+#linkList .newGroup {margin-top: 15px}
+#linkList a:hover   {text-decoration: underline overline; 
+                     color: black; background-color: ivory}
+
+#main                {position: absolute; top: 160px; left: 190px; z-index: 1}
+#firstp              {margin-top: 0px}
+#firstp:first-line   {font-variant: small-caps; font-weight: bold}
+#firstp:first-letter {float: left; font-size: 400%; font-family: 'Times New Roman', serif;
+                      line-height: 0.8; margin: 0px 5px 0px 0px}
+
+
+</style>
+<script>
+window.onload = init;
+
+var activeMenu = null;
+var clipHgt = 0;
+var timeID;
+
+function init() {
+   var menus = new Array();
+   var allElems = document.getElementsByTagName("*");
+
+   for (var i = 0; i < allElems.length; i++) {
+      if (allElems[i].className == "menu") menus.push(allElems[i]);
+   }
+
+   for (var i = 0; i < menus.length; i++) {
+      menus[i].onclick = changeMenu;
+      menus[i].onmouseover = moveMenu;
+   }
+
+   document.getElementById("logo").onclick = closeOldMenu;
+   document.getElementById("linkList").onclick = closeOldMenu;
+   document.getElementById("main").onclick = closeOldMenu;
+}
+
+function moveMenu() {
+    // this function moves the pull-down menu from one title to another
+
+    if (activeMenu) {
+        closeOldMenu();
+
+        menuID = this.id + "List";
+        activeMenu = document.getElementById(menuID);
+        activeMenu.style.clip = "rect(0px, 150px, 0px, 0px)";
+        activeMenu.style.display = "block";
+        timeID = setInterval("rollDown()", 2);
+     }
+}
+
+function changeMenu() {
+   // this function changes the pull-down menu displayed in the document
+
+   closeOldMenu();
+
+   menuID = this.id + "List";
+   activeMenu = document.getElementById(menuID);
+   activeMenu.style.clip = "rect(0px, 150px, 0px, 0px)";
+   activeMenu.style.display = "block";
+   timeID = setInterval("rollDown()", 1);
+   
+}
+
+
+function closeOldMenu() {
+    if (activeMenu) {
+        clearInterval(timeID);
+        activeMenu.style.display = "none";
+        activeMenu = null;
+     }
+}
+
+
+function rollDown() {
+    clipHgt = clipHgt + 10;
+    if (clipHgt < 400) {
+        activeMenu.style.clip = "rect(0px, 150px," + clipHgt + "px, 0px)";
+     } else {
+         clearInterval(timeID);
+         clipHgt = 0;
+     }
+}
+
+</script>
+ <div class="footer">
+    <p>&nbsp;&nbsp;	Todays Date: January 29, 2018</p>
+    <p><font size="2">© J&amp;J Learning</font></p>
+
+<div align="right"><u>
+<a href="sponsors.html"><font color="red">Our Sponsors</font></a>
+</div></u>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+</body>
+</html>
+
